@@ -217,6 +217,7 @@ admin_confirm_logged_in();
             </div>
             <!-- /.navbar-static-side -->
         </nav>
+        
 
         
 
@@ -667,5 +668,10 @@ $("#gosearch").click(function() {
 
     
 </script>
+<footer class=" fixed-bottom ">
+       
+       <div>© 2021 Copyright: Hiba Ithawi & Moheeb Tariq</div>
+                   
+   </footer>
 </body>
 </html>

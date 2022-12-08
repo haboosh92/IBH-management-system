@@ -10,33 +10,25 @@ $studAuto = New Autonumber();
 <form action="controller.php?action=add" class="form-horizontal well" method="post" >
 <!-- <form action="index.php?q=subject" class="form-horizontal well" method="post" > -->
   <div class="table-responsive">
-  <div class="col-md-7"><h2>Add New Student</h2></div> 
-  <label class="col-md-2">Academic Year: </label>
-  <div class="col-md-3">
-     <select class="form-control input-sm" name="SY">
-     <option>Select</option>
-        <?php 
-          $mydb->setQuery("SELECT * FROM `tblsy`");
-          $cur = $mydb->loadResultList();
+    <div class="col-md-7"><h2>Add New Student</h2></div> 
+      <label class="col-md-2">Academic Year: </label>
+      <div class="col-md-3">
+        <select class="form-control input-sm" name="SY">
+        <option>Select</option>
+            <?php 
+              $mydb->setQuery("SELECT * FROM `tblsy`");
+              $cur = $mydb->loadResultList();
 
-          foreach ($cur as $result) {
-            echo '<option>'.$result->SY.'</option>';
+              foreach ($cur as $result) {
+                echo '<option>'.$result->SY.'</option>';
 
-          }
-        ?>
-      </select> 
-    </div> 
+              }
+            ?>
+        </select> 
+      </div> 
     
     <table class="table">
-  <!--  <tr>
-        <td><label>Id</label></td>
-        <td >-->
-<!--           <input class="form-control input-md"  id="STUDID" name="STUDID" placeholder="Student Id" type="text" value="<?php echo isset($_POST['STUDID']) ? $_POST['STUDID'] : DATE('Y').'-'.$autonum->AUTO; ?>"> -->
- <!--                 <input class="form-control input-md"  id="STUDID" name="STUDID" placeholder="Student Id" type="text" value="">
-        </td>
-        <td colspan="4"></td>
-
-      </tr>-->
+  
       <tr>
         <td><label>FirstName</label></td>
         <td>
@@ -52,7 +44,7 @@ $studAuto = New Autonumber();
         </td>
         <td><label>Surname</label></td>
         <td>
-          <input required="true"   class="form-control input-md" id="SNAME" name="SNAME" placeholder="SurName" type="text">
+          <input required="true"   class="form-control input-md" id="SNAME" name="SNAME" placeholder="Surname" type="text">
         </td>
          
       </tr>
@@ -67,7 +59,7 @@ $studAuto = New Autonumber();
         <td colspan="2">
           <label>
             <input checked id="optionsRadios1" name="SEX" type="radio" value="Female">Female 
-             <input id="optionsRadios2" name="SEX" type="radio" value="Male"> Male
+            <input id="optionsRadios2" name="SEX" type="radio" value="Male"> Male
           </label>
         </td>
         

@@ -9954,6 +9954,17 @@ textarea.form-control {
       .sidebar-box-2 ul li a {
         color: #000000; }
 
+        footer {
+          position: fixed;
+          height: 120px;
+          bottom: 0;
+          width: 100%;
+          font-display: var(--light);
+          font-style: italic;
+          font-size: 12px;
+          padding-bottom: 5px;
+          align-content: center;
+      }
 #ftco-loader {
   position: fixed;
   width: 96px;
