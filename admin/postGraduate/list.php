@@ -17,19 +17,39 @@
                                         <th> ID</th>
                                         <th> Full Name </th>
                                         <th> Surname </th>
-                                        <th> DOB </th>
+                                        <th> Contact No. </th>
+                                        <th> Email </th>
+                                        <th> Program Type</th>
                                         <th> Department </th>
-                                        <th> Study year </th>
-                                        <th> Date of join </th>
-                                        <th> First extend</th>
-                                        <th> Second extend</th>
-                                        <th> Disscusion deadline</th>
+                                        <th> Accademic Year </th>
+                                        <th> Final Deadline</th>
+                                        <th> Notes</th>
                                         <th> Action </th>
                                    </tr>
                               </thead>
                               <tbody>
                                    <?php 
-                                   
+                                    if($_SESSION['ACCOUNT_TYPE']=='Administrator') // I'm not sure currently if the post graduate students is the same for both Dean and his assistances we might remove this condition later 
+                                    {
+                                         $pstSql = "SELECT * FROM post_graduate_std";
+                                         $mydb->setQuery($pstSql);
+                                         $currentStd = $mydb->loadResultList();
+                                         foreach ($currentStd as $result) {
+                                             # code...
+                                             echo "<tr>
+                                                  <td>" .$result->Id_pst_std."</td>
+                                                  <td>" .$result->FName."</td>
+                                                  <td>" .$result->Surname."</td>
+                                                  <td>" .$result->ContactNo."</td>
+                                                  <td>" .$result->Email."</td>
+                                                  <td>" .$result->ProgramType."</td>
+                                                  <td>" .$result->Course."</td>
+                                                  <td>" .$result->Date_Start."</td>
+                                                  <td>" .$result->Final_Deadline."</td>
+                                                  <td>" .$result->Note."</td>
+                                             </tr>";
+                                         }
+                                    }
                                    ?>
                               </tbody>
                          </table>

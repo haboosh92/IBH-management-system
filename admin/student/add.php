@@ -17,9 +17,9 @@ $studAuto = New Autonumber();
         <option>Select</option>
             <?php 
               $mydb->setQuery("SELECT * FROM `tblsy`");
-              $cur = $mydb->loadResultList();
+              $current = $mydb->loadResultList();
 
-              foreach ($cur as $result) {
+              foreach ($current as $result) {
                 echo '<option>'.$result->SY.'</option>';
 
               }
@@ -155,7 +155,6 @@ $studAuto = New Autonumber();
         
       </tr>
       <tr>
-      <td></td>
         <td colspan="5">  
           <button class="btn btn-success btn-lg" name="submit" type="submit">Save</button>
         </td>

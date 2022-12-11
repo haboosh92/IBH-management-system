@@ -5,7 +5,7 @@ if(!isset($_SESSION['ACCOUNT_ID'])){
 }
 
 $view = (isset($_GET['view']) && $_GET['view'] != '') ? $_GET['view'] : '';
- $title="Instructor"; 
+ $title="Dean & Assistants"; 
  $header=$view; 
 switch ($view) {
 	case 'list' :

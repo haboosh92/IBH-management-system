@@ -5,7 +5,7 @@ if(!isset($_SESSION['ACCOUNT_ID'])){
 }
 
 $view = (isset($_GET['view']) && $_GET['view'] != '') ? $_GET['view'] : '';
- $title="Student"; 
+ $title="Dean & Departments"; 
  $header=$view; 
 switch ($view) {
 	case 'list' :
@@ -15,16 +15,11 @@ switch ($view) {
 	case 'add' :
 		$content    = 'add.php';		
 		break;
-	case 'grades' :
-		$content    = 'viewgrade.php';		
-		break;
-	case 'addgrade' :
-		$content    = 'addgrade.php';		
-		break;
 
 	case 'edit' :
 		$content    = 'edit.php';		
 		break;
+		
     case 'view' :
 		$content    = 'view.php';		
 		break;

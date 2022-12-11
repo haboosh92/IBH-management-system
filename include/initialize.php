@@ -36,9 +36,6 @@ require_once(LIB_PATH.DS."section.php");
 require_once(LIB_PATH.DS."fees.php");
 require_once(LIB_PATH.DS."announcements.php");
 require_once(LIB_PATH.DS."expenses.php");
-
-
-
 require_once(LIB_PATH.DS."database.php");
 ?>
 
