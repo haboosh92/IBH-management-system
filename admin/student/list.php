@@ -17,17 +17,13 @@
 				  <thead>
 				  	<tr>
 				  		<th>ID</th>
-				  		<th>
-				  		 <!-- <input type="checkbox" name="chkall" id="chkall" onclick="return checkall('selector[]');">  -->
-				  		 Full Name</th>
+				  		<th>Full Name</th>
 				  		<th>Sex</th> 
 				  		<th>DOB</th>
 				  		<th>Address</th>
 				  		<th>Contact No.</th>
 				  		<th>Course</th>
-				  		<!-- <th>Status</th> -->
 				  		<th>Action</th>
-				 
 				  	</tr>	
 				  </thead> 
 				  <tbody>
@@ -84,21 +80,12 @@
 					  				<a title="View Grades" href="index.php?view=grades&id='.$result->IDNO.'" class="btn btn-primary btn-xs" >Grades <span class="fa fa-info-circle fw-fa"></span> </a> 
 					  		     </td>';
 				  		}
-					  		
-					  		// echo '<td align="center" > <a title="View Grades" href="index.php?view=grades&id='.$result->IDNO.'" class="btn btn-primary btn-xs" >Grades <span class="fa fa-info-circle fw-fa"></span> </a>
-					  		// 			 </td>';
 					  		echo '</tr>';
 				  		}  
 				  	?>
 				  </tbody>
 					
 				</table>
- 
-				<!-- <div class="btn-group">
-				  <a href="index.php?view=add" class="btn btn-default">New</a>
-				  <button type="submit" class="btn btn-default" name="delete"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button>
-				</div>
- -->
 			</div>
 				</form>
 	

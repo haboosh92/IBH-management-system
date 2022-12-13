@@ -27,6 +27,14 @@ function doInsert(){
             message("full required fields please! ");
             redirect('index.php?view=add');
         }
+        else{
+            $myclasses = get_declared_classes();
+            foreach($myclasses as $class)
+            {
+                console.log($class);
+            }
+           //$pstStudent = new postGraduateStudent();
+        }
     }
 }
 

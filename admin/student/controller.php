@@ -34,10 +34,6 @@ switch ($action) {
     case 'resetpassword' :
 	doResetPassword();
 	break;
-
- 
-
- 
 	}
    
 	function doInsert(){
@@ -61,13 +57,6 @@ switch ($action) {
 
 							
 							$student = New Student(); 
-							/*$res = $student->single_student($_POST['STUDID']);
-							if ($res) {
-								# code...
-								message("Id number is already exist.","error");
-								redirect("index.php?view=add");
-							}*/
-							//same name in the database // same name in add.php
 							$student->FName 		= $_POST['FNAME'];
 							$student->MName 		= $_POST['MNAME'];
 							$student->LName 		= $_POST['LNAME'];
@@ -85,10 +74,6 @@ switch ($action) {
 							$student->Course_type 	= $_POST['CT'];
 							$student->HOME_ADD 		= $_POST['PADDRESS'];
 							$student->Note	 		= $_POST['NOTE'];
-							// $student->SEMESTER   	= $_POST['SEMESTER']; 
-							// $student->student_status ='New';
-							// $student->YEARLEVEL   	= 1; 
-							// $student->NewEnrollees  = 1; 
 							$student->create();
 
 

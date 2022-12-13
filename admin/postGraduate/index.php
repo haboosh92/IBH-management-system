@@ -15,17 +15,13 @@ switch ($view) {
 	case 'add' :
 		$content    = 'add.php';		
 		break;
- 
 
 	case 'edit' :
 		$content    = 'edit.php';		
 		break;
+
     case 'view' :
 		$content    = 'view.php';		
-		break;
-
-	case 'student' :
-		$content    = 'viewstudent.php';		
 		break;
 
 	default :
