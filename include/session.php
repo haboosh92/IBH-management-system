@@ -136,6 +136,25 @@ function notifycheck(){
                     $_SESSION['basicInfo']   = "active";
        			 break;
 
+
+
+
+
+        // if(isset($_GET['active'])){
+        //    $_SESSION['work'] = 'active' ;
+        // }elseif(isset($_GET['active'])){
+        //   $_SESSION['otherInfo']='active';
+        // }else{
+        //   $_SESSION['basicInfo']   = "active";
+        // }
+        
+      }
+ }
+}
+
+
+
+
 function header_subheader($header,$subheader){
 
   $setheader = (isset($header) && $header != '') ? $header : '';
