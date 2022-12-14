@@ -29,33 +29,33 @@ function doInsert(){
             redirect('index.php?view=add');
         }
         else{
-           $pstStudent                  =       new postGraduateStd();
-           $res = $pstStudent->single_student($_POST['STUDID']);
-							if ($res) {
-								# code...
-								message("Id number is already exist.","error");
-								redirect("index.php?view=add");
-							}
-           $pstStudent->FName           =       $_POST['FName'];
-           $pstStudent->MName           =       $_POST['MName'];
-           $pstStudent->LName           =       $_POST['LName'];
-           $pstStudent->Surname         =       $_POST['Surname'];
-           $pstStudent->ContactNo       =       $_POST['ContactNo'];
-           $pstStudent->Email           =       $_POST['Email'];
-           $pstStudent->ProgramType     =       $_POST['ProgramType'];
-           $pstStudent->Course          =       $_POST['Course'];
-           $pstStudent->Note            =       $_POST['Note'];
-           $pstStudent->DateStart       =       date_format(date_create($_POST['DateStart']),'Y-m-d');
-           $pstStudent->FinalDeadline   =       date_format(date_create($_POST['FinalDeadline']),'Y-m-d');
-           $pstStudent->create();
+//            $pstStudent                  =       new postGraduateStd();
+//            $res = $pstStudent->single_student($_POST['STUDID']);
+// 							if ($res) {
+// 								# code...
+// 								message("Id number is already exist.","error");
+// 								redirect("index.php?view=add");
+// 							}
+//            $pstStudent->FName           =       $_POST['FName'];
+//            $pstStudent->MName           =       $_POST['MName'];
+//            $pstStudent->LName           =       $_POST['LName'];
+//            $pstStudent->Surname         =       $_POST['Surname'];
+//            $pstStudent->ContactNo       =       $_POST['ContactNo'];
+//            $pstStudent->Email           =       $_POST['Email'];
+//            $pstStudent->ProgramType     =       $_POST['ProgramType'];
+//            $pstStudent->Course          =       $_POST['Course'];
+//            $pstStudent->Note            =       $_POST['Note'];
+//            $pstStudent->DateStart       =       date_format(date_create($_POST['DateStart']),'Y-m-d');
+//            $pstStudent->FinalDeadline   =       date_format(date_create($_POST['FinalDeadline']),'Y-m-d');
+//            $pstStudent->create();
 
-           //$studAuto = New Autonumber();
-           //$studAuto->studauto_update();
+//            //$studAuto = New Autonumber();
+//            //$studAuto->studauto_update();
 
-            message("New student created successfully!", "success");
-           redirect("index.php");
-        }
-    }
-}
+//             message("New student created successfully!", "success");
+//            redirect("index.php");
+         }
+     }
+ }
 
 ?> 

@@ -19,18 +19,18 @@ if(!isset($_SESSION['ACCOUNT_ID'])){
             </tr>
             <tr>
                 <td><label>Contact No. </label></td>
-                <td colspan="3"><input class="form-control input-md" id="ContactNo" name="CONTACT" placeholder="Contact Number " type="number" maxlength="11" ></td>
+                <td colspan="3"><input class="form-control input-md" id="ContactNo" name="ContactNo" placeholder="Contact Number " type="number" maxlength="11" ></td>
             </tr>
             <tr>
                 <td><label>Email </label></td>
-                <td colspan="3"><input  class="form-control input-md" id="email" name="EmA" placeholder="Your Email" type="text" ></td>
+                <td colspan="3"><input  class="form-control input-md" id="Email" name="Email" placeholder="Your Email" type="text" ></td>
             </tr>
             <tr>
                 <td><label>Academic Year </label></td>
                 <td colspan="3">
                     <div class="input-group" >
                         <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                        <input class="form-control input-md" name="Date_Start"  id="Date_Start"  type="date"  placeholder="mm/dd/yyyy"  data-inputmask="'alias': 'mm/dd/yyyy'" data-mask value="<?php echo isset($_POST['Date_Start']) ? $_POST['Date_Start'] : ''; ?>">
+                        <input class="form-control input-md" name="DateStart"  id="DateStart"  type="date"  placeholder="mm/dd/yyyy"  data-inputmask="'alias': 'mm/dd/yyyy'" data-mask value="<?php echo isset($_POST['Date_Start']) ? $_POST['Date_Start'] : ''; ?>">
                     </div>  
                 </td>
             </tr>
@@ -39,7 +39,7 @@ if(!isset($_SESSION['ACCOUNT_ID'])){
                 <td colspan="3">
                     <div class="input-group" >
                         <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                        <input class="form-control input-md" name="Final_Deadline"  id="Final_Deadline"  type="date"  placeholder="mm/dd/yyyy"  data-inputmask="'alias': 'mm/dd/yyyy'" data-mask value="<?php echo isset($_POST['Final_Deadline']) ? $_POST['Final_Deadline'] : ''; ?>">
+                        <input class="form-control input-md" name="FinalDeadline"  id="FinalDeadline"  type="date"  placeholder="mm/dd/yyyy"  data-inputmask="'alias': 'mm/dd/yyyy'" data-mask value="<?php echo isset($_POST['Final_Deadline']) ? $_POST['Final_Deadline'] : ''; ?>">
                     </div>  
                 </td>
             </tr>

@@ -31,8 +31,8 @@
                                    <?php 
                                     if($_SESSION['ACCOUNT_TYPE']=='Administrator') // I'm not sure currently if the post graduate students is the same for both Dean and his assistances we might remove this condition later 
                                     {
-                                         $pstSql = "SELECT * FROM post-graduate-std";
-                                         $mydb->setQuery($pstSql);
+                                         $postSql = "SELECT * FROM post-graduate-std";
+                                         $mydb->setQuery($postSql);
                                          $currentStd = $mydb->loadResultList();
                                          foreach ($currentStd as $result) {
                                              # code...
