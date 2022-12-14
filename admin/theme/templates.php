@@ -415,8 +415,8 @@ $('.date_pickerfrom').datetimepicker({
 
 
 $('.date_pickerto').datetimepicker({
-  format: 'mm/dd/yyyy',
-   startDate : '01/01/2000', 
+    format: 'mm/dd/yyyy',
+    startDate : '01/01/2000', 
     language:  'en',
     weekStart: 1,
     todayBtn:  1,
@@ -668,10 +668,10 @@ $("#gosearch").click(function() {
 
     
 </script>
-<footer class=" fixed-bottom ">
+<!-- <footer class=" fixed-bottom ">
        
        <div>© 2021 Copyright: Hiba Ithawi & Moheeb Tariq</div>
                    
-   </footer>
+   </footer> -->
 </body>
 </html>

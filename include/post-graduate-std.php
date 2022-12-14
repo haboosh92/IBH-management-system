@@ -10,8 +10,7 @@ class postGraduateStd {
 	}
 	function listofstudent(){
 		global $mydb;
-		$mydb->setQuery("SELECT * FROM ".self::$tblname);
-		return $cur;
+		return $mydb->setQuery("SELECT * FROM ".self::$tblname);
 	}
 	function find_student($id="",$name=""){
 		global $mydb;
@@ -24,7 +23,7 @@ class postGraduateStd {
 	function find_all_student($lname="",$fname="",$mname=""){
 		global $mydb;
 		$mydb->setQuery("SELECT * FROM ".self::$tblname." 
-			WHERE LNAME = '{$lname}' AND FNAME= '{$fname}' AND MNAME='{$mname}'"); 
+			WHERE LName = '{$lname}' AND FName= '{$fname}' AND MName='{$mname}'"); 
 		$row_count = $mydb->num_rows();
 		return $row_count;
 	}
