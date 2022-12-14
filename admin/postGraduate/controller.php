@@ -28,12 +28,25 @@ function doInsert(){
             redirect('index.php?view=add');
         }
         else{
-            $myclasses = get_declared_classes();
-            foreach($myclasses as $class)
-            {
-                console.log($class);
-            }
-           //$pstStudent = new postGraduateStudent();
+           $pstStudent                  =       new postGraduateStd();
+           $pstStudent->FName           =       $_POST['FName'];
+           $pstStudent->MName           =       $_POST['MName'];
+           $pstStudent->LName           =       $_POST['LName'];
+           $pstStudent->Surname         =       $_POST['Surname'];
+           $pstStudent->ContactNo       =       $_POST['ContactNo'];
+           $pstStudent->email           =       $_POST['Email'];
+           $pstStudent->ProgramType     =       $_POST['ProgramType'];
+           $pstStudent->Course          =       $_POST['Course'];
+           $pstStudent->Note            =       $_POST['Note'];
+           $pstStudent->DateStart       =       date_format(date_create($_POST['DateStart']),'Y-m-d');
+           $pstStudent->FinalDeadline   =       date_format(date_create($_POST['FinalDeadline']),'Y-m-d');
+           $pstStudent->create();
+
+           $studAuto = New Autonumber();
+           $studAuto->studauto_update();
+
+            message("New student created successfully!", "success");
+           redirect("index.php");
         }
     }
 }

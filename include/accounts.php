@@ -29,7 +29,7 @@ class User {
 		 	$_SESSION['ACCOUNT_ID']   		= $user_found->ACCOUNT_ID;
 		 	$_SESSION['ACCOUNT_NAME']      	= $user_found->ACCOUNT_NAME;
 		 	$_SESSION['ACCOUNT_USERNAME'] 	= $user_found->ACCOUNT_USERNAME;
-		 	$_SESSION['ACCOUNT_PASSWORD'] 		= $user_found->ACCOUNT_PASSWORD;
+		 	$_SESSION['ACCOUNT_PASSWORD'] 	= $user_found->ACCOUNT_PASSWORD;
 		 	$_SESSION['ACCOUNT_TYPE'] 		= $user_found->ACCOUNT_TYPE;
 		   return true;
 		 }else{

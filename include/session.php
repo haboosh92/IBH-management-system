@@ -136,6 +136,17 @@ function notifycheck(){
                     $_SESSION['basicInfo']   = "active";
        			 break;
 
+
+
+
+
+     
+        
+      }
+ }
+}
+
+
 function header_subheader($header,$subheader){
 
   $setheader = (isset($header) && $header != '') ? $header : '';
