@@ -78,12 +78,13 @@
 
                       <div class="col-md-8">
                        <select class="form-control input-sm" name="U_ROLE" id="U_ROLE">
-                          <option value="Administrator"  >Administrator</option>
-                          <!-- <option value="Staff"  >Staff</option>  -->
+                          <option value="Administrator">Administrator</option>
                           <option value="Instructor">Instructor</option>
-                          <option value="Instructor">HR</option>
-                          <option value="Instructor">Student activities</option>
-                          <!-- <option value="Encoder" >Encoder</option> -->
+                          <option value="HR" >HR</option>
+                          <option value="Student affairs" >Student affairs </option>
+                          <option value="Scientific affairs" >Scintific affairs</option>
+                          <option value="Computer dep" >Computer dep</option>
+                          <option value="Chemistry dep" >Chemistry dep</option>
                         </select> 
                       </div>
                     </div>

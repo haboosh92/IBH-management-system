@@ -146,8 +146,6 @@ switch ($action) {
 			}else{
 					//uploading the file
 					move_uploaded_file($temp,"photos/" . $myfile);
-		 	
-					 
 
 						$user = New User();
 						$user->USERIMAGE 			= $location;
