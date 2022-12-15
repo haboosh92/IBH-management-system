@@ -85,6 +85,9 @@
                           <option value="Scientific affairs" >Scintific affairs</option>
                           <option value="Computer dep" >Computer dep</option>
                           <option value="Chemistry dep" >Chemistry dep</option>
+                          <option value="Biology dep" >Biology dep</option>
+                          <option value="Physics dep" >Physics dep</option>
+                          <option value="Math dep" >Math dep</option>
                         </select> 
                       </div>
                     </div>

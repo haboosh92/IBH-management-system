@@ -175,34 +175,7 @@ admin_confirm_logged_in();
                                 <li><a href="<?php echo web_root; ?>admin/postGraduate/index.php"><i class="fa fa-circle-o fa-fw"></i> Biology </a></li> 
                                 <li><a href="<?php echo web_root; ?>admin/postGraduate/index.php" ><i class="fa fa-circle-o fa-fw"></i>  Physics </a></li>
                              </ul>
-                        </li> 
-                        <li>
-                            <!--<a href="#"><i class="fa  fa-gear fa-fw"></i> Maintenance <span class="fa arrow"></span></a>
-                            <ul class="nav nav-third-level">
-                                <li>
-                                     <a href="<?php echo web_root; ?>admin/maintenance/index.php" ><i class="fa fa-circle-o fa-fw"></i>  Set Semester </a>
-                                </li> 
-                                <li>
-                                     <a href="<?php echo web_root; ?>admin/department/index.php" ><i class="fa  fa-circle-o fa-fw"></i>  Department</a>
-                                </li> 
-                                <li>
-                                     <a href="<?php echo web_root; ?>admin/course/index.php" ><i class="fa  fa-circle-o fa-fw"></i>  Courses </a>
-                                 </li> 
-                                <li>
-                                     <a href="<?php echo web_root; ?>admin/subject/index.php"><i class="fa fa-circle-o fa-fw"></i> Curriculum </a>
-                                </li> 
-                                <li>
-                                     <a href="<?php echo web_root; ?>admin/sy/index.php"><i class="fa fa-circle-o fa-fw"></i> School Year </a>
-                                </li> 
-                                <li>
-                                     <a href="<?php echo web_root; ?>admin/level/index.php"><i class="fa fa-circle-o fa-fw"></i> Year Level </a>
-                                </li> 
-                                <li>
-                                     <a href="<?php echo web_root; ?>admin/section/index.php"><i class="fa fa-circle-o fa-fw"></i> Section </a>
-                                </li> 
-                            </ul> -->
-                            <!-- /.nav-third-level -->
-                        </li> 
+                        </li>  
                         <li>
                             <a href="<?php echo web_root; ?>admin/user/index.php" ><i class="fa fa-user fa-fw"></i> Users </a> 
                         </li> 

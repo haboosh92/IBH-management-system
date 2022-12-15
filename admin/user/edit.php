@@ -80,10 +80,12 @@
                           <option value="Administrator"  <?php echo ($singleuser->ACCOUNT_TYPE=='Administrator') ? 'selected="true"': '' ; ?>>Administrator</option>
                           <!-- <option value="Staff" <?php echo ($singleuser->ACCOUNT_TYPE=='Staff') ? 'selected="true"': '' ; ?>>Staff</option>  -->
                           <!-- <option value="Customer">Customer</option> -->
-                              <option value="Instructor" <?php echo ($singleuser->ACCOUNT_TYPE=='Instructor') ? 'selected="true"': '' ; ?>>Instructor</option>
-                     <!-- <option value="Encoder" <?php echo ($singleuser->ACCOUNT_TYPE=='Encoder') ? 'selected="true"': '' ; ?>>Encoder</option> -->
-                     <option value="HR"  <?php echo ($singleuser->ACCOUNT_TYPE=='Administrator') ? 'selected="true"': '' ; ?>>HR</option>
-                     <option value="Administrator"  <?php echo ($singleuser->ACCOUNT_TYPE=='Administrator') ? 'selected="true"': '' ; ?>>Student Activities</option>
+                          <option value="Instructor" <?php echo ($singleuser->ACCOUNT_TYPE=='Instructor') ? 'selected="true"': '' ; ?>>Instructor</option>
+                          <!-- <option value="Encoder" <?php echo ($singleuser->ACCOUNT_TYPE=='Encoder') ? 'selected="true"': '' ; ?>>Encoder</option> -->
+                          <option value="HR"  <?php echo ($singleuser->ACCOUNT_TYPE=='Administrator') ? 'selected="true"': '' ; ?>>HR</option>
+                          <option value="Administrator"  <?php echo ($singleuser->ACCOUNT_TYPE=='Administrator') ? 'selected="true"': '' ; ?>>Student affairs</option>
+                          <option value="HR"  <?php echo ($singleuser->ACCOUNT_TYPE=='Administrator') ? 'selected="true"': '' ; ?>></option>
+                          <option value="Administrator"  <?php echo ($singleuser->ACCOUNT_TYPE=='Administrator') ? 'selected="true"': '' ; ?>>Scientific affairs</option>
                         </select> 
                       </div>
                     </div>
