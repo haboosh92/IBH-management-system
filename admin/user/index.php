@@ -11,11 +11,9 @@ switch ($view) {
 	case 'list' :
 		$content    = 'list.php';		
 		break;
-
 	case 'add' :
 		$content    = 'add.php';		
 		break;
-
 	case 'edit' :
 		$content    = 'edit.php';		
 		break;

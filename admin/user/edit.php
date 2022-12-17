@@ -77,15 +77,15 @@
 
                       <div class="col-md-8">
                        <select class="form-control input-sm" name="U_ROLE" id="U_ROLE">
-                          <option value="Administrator"  <?php echo ($singleuser->ACCOUNT_TYPE=='Administrator') ? 'selected="true"': '' ; ?>>Administrator</option>
-                          <!-- <option value="Staff" <?php echo ($singleuser->ACCOUNT_TYPE=='Staff') ? 'selected="true"': '' ; ?>>Staff</option>  -->
-                          <!-- <option value="Customer">Customer</option> -->
-                          <option value="Instructor" <?php echo ($singleuser->ACCOUNT_TYPE=='Instructor') ? 'selected="true"': '' ; ?>>Instructor</option>
-                          <!-- <option value="Encoder" <?php echo ($singleuser->ACCOUNT_TYPE=='Encoder') ? 'selected="true"': '' ; ?>>Encoder</option> -->
-                          <option value="HR"  <?php echo ($singleuser->ACCOUNT_TYPE=='Administrator') ? 'selected="true"': '' ; ?>>HR</option>
-                          <option value="Administrator"  <?php echo ($singleuser->ACCOUNT_TYPE=='Administrator') ? 'selected="true"': '' ; ?>>Student affairs</option>
-                          <option value="HR"  <?php echo ($singleuser->ACCOUNT_TYPE=='Administrator') ? 'selected="true"': '' ; ?>></option>
-                          <option value="Administrator"  <?php echo ($singleuser->ACCOUNT_TYPE=='Administrator') ? 'selected="true"': '' ; ?>>Scientific affairs</option>
+                          <option value="Administrator"       <?php echo ($singleuser->ACCOUNT_TYPE=='Administrator') ? 'selected="true"': '' ; ?>>Administrator</option>
+                          <option value="HR"                  <?php echo ($singleuser->ACCOUNT_TYPE=='HR') ? 'selected="true"': '' ; ?>>HR</option>
+                          <option value="Student affairs"     <?php echo ($singleuser->ACCOUNT_TYPE=='Student affairs') ? 'selected="true"': '' ; ?>>Student affairs</option>
+                          <option value="Scientific affairs"  <?php echo ($singleuser->ACCOUNT_TYPE=='Scientific affairs') ? 'selected="true"': '' ; ?>>Scientific affairs</option>
+                          <option value="Computer dep"        <?php echo ($singleuser->ACCOUNT_TYPE=='Computer dep') ? 'selected="true"': '' ; ?>>Computer dep.</option>
+                          <option value="Chemistry dep"       <?php echo ($singleuser->ACCOUNT_TYPE=='Chemistry dep') ? 'selected="true"': '' ; ?>>Chemistry dep.</option>
+                          <option value="Biology dep"         <?php echo ($singleuser->ACCOUNT_TYPE=='Biology dep') ? 'selected="true"': '' ; ?>>Biology dep</option>
+                          <option value="Physics dep"         <?php echo ($singleuser->ACCOUNT_TYPE=='Physics dep') ? 'selected="true"': '' ; ?>>Physics dep</option>
+                          <option value="Mathematics dep"     <?php echo ($singleuser->ACCOUNT_TYPE=='Mathematics dep') ? 'selected="true"': '' ; ?>>Mathematics</option>
                         </select> 
                       </div>
                     </div>
