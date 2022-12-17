@@ -22,22 +22,15 @@ if ($_SESSION['ACCOUNT_TYPE']!='Administrator'){
 				
 				  <thead>
 				  	<tr>
-				  		<!-- <th>#</th> -->
-				  		<th>
-				  		 <!-- <input type="checkbox" name="chkall" id="chkall" onclick="return checkall('selector[]');">  -->
-				  		 Account Name</th>
+				  		<th>Account Name</th>
 				  		<th>Username</th>
 				  		<th>Role</th>
 				  		<th width="20%" >Action</th>
-				 
 				  	</tr>	
 				  </thead> 
 				  <tbody>
 				  	<?php 
-				  		// $mydb->setQuery("SELECT * 
-								// 			FROM  `tblusers` WHERE TYPE != 'Customer'");
-				  		$mydb->setQuery("SELECT * 
-											FROM  `useraccounts`");
+				  		$mydb->setQuery("SELECT * FROM  `useraccounts`");
 				  		$cur = $mydb->loadResultList();
 
 						foreach ($cur as $result) {
@@ -46,7 +39,7 @@ if ($_SESSION['ACCOUNT_TYPE']!='Administrator'){
 				  		echo '<td>' . $result->ACCOUNT_NAME.'</a></td>';
 				  		echo '<td>'. $result->ACCOUNT_USERNAME.'</td>';
 				  		echo '<td>'. $result->ACCOUNT_TYPE.'</td>';
-				  		If($result->ACCOUNT_ID==$_SESSION['ACCOUNT_ID'] || $result->ACCOUNT_TYPE=='MainAdministrator' || $result->ACCOUNT_TYPE=='Administrator') {
+				  		If($result->ACCOUNT_ID==$_SESSION['ACCOUNT_ID'] || $result->ACCOUNT_TYPE=='Administrator') {
 				  			$active = "Disabled";
 
 				  		}else{
@@ -63,12 +56,7 @@ if ($_SESSION['ACCOUNT_TYPE']!='Administrator'){
 				  </tbody>
 					
 				</table>
- 
-				<!-- <div class="btn-group">
-				  <a href="index.php?view=add" class="btn btn-default">New</a>
-				  <button type="submit" class="btn btn-default" name="delete"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button>
-				</div>
- -->
+				
 			</div>
 				</form>
 	
