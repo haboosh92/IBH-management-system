@@ -35,7 +35,6 @@ if ($_SESSION['ACCOUNT_TYPE']!='Administrator'){
 
 						foreach ($cur as $result) {
 				  		echo '<tr>';
-				  		// echo '<td width="5%" align="center"></td>';
 				  		echo '<td>' . $result->ACCOUNT_NAME.'</a></td>';
 				  		echo '<td>'. $result->ACCOUNT_USERNAME.'</td>';
 				  		echo '<td>'. $result->ACCOUNT_TYPE.'</td>';
@@ -56,7 +55,7 @@ if ($_SESSION['ACCOUNT_TYPE']!='Administrator'){
 				  </tbody>
 					
 				</table>
-				
+
 			</div>
 				</form>
 	
