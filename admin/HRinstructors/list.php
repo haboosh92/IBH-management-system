@@ -14,7 +14,7 @@
 <div class="row">
      <div class="col-lg-12">
        	<div class="col-lg-8">
-        <h2 class="page-header">List of Instructors </h2>
+        <h2 class="page-header">List of Inbox </h2>
        	</div>
        		</div>
         	<!-- /.col-lg-12 -->
