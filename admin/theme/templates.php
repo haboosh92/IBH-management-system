@@ -161,8 +161,8 @@ admin_confirm_logged_in();
                         </li> 
                       <?php } ?>
                       <?php if ($_SESSION['ACCOUNT_TYPE']=='Administrator' || $_SESSION['ACCOUNT_TYPE']=='Scientific affairs' || $_SESSION['ACCOUNT_TYPE']=='Student affairs' ) {  ?>
-                      <li>
-                             <a href="<?php echo web_root; ?>admin/instructor/index.php" ><i class="fa fa-calendar fa-fw"></i> Calender  </a>
+                        <li>
+                             <a href="<?php echo web_root; ?>admin/calendar/index.php" ><i class="fa fa-calendar fa-fw"></i> Calender  </a>
                     
                         </li> 
                         <?php }  ?>
