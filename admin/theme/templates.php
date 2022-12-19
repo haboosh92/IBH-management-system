@@ -82,7 +82,7 @@ admin_confirm_logged_in();
 
                           <div class="divpic"> 
                          
-                            <?php if ($_SESSION['ACCOUNT_TYPE']=='Officer') {
+                            <?php if ($_SESSION['ACCOUNT_TYPE']=='Student affairs') {
                               # code...
                               echo '<a><img width="70" height="80" src="'.web_root.'/student/'.$res->STUDPHOTO.'" /></a>';
                             }else{ ?> 
@@ -92,7 +92,7 @@ admin_confirm_logged_in();
                           <?php   } ?> 
                           </div> 
                     
-                      <?php if ($_SESSION['ACCOUNT_TYPE']=='Officer') { ?>
+                      <?php if ($_SESSION['ACCOUNT_TYPE']=='Student affairs') { ?>
                         <div class="divtxt">
                           <li><a href="<?php echo web_root; ?>index.php?q=profile"> <?php echo $singleuser->ACCOUNT_NAME; ?> </a> 
                           <li><a href="<?php echo web_root; ?>admin/logout.php"><i class="fa fa-sign-out fa-fw"></i> Log Out</a></li> 
@@ -129,7 +129,7 @@ admin_confirm_logged_in();
                             <a href="<?php echo web_root; ?>admin/index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>  
    
-                         <?php if ($_SESSION['ACCOUNT_TYPE']=='Administrator' || $_SESSION['ACCOUNT_TYPE']=='Instructor'  ) {  ?>
+                         <?php if ($_SESSION['ACCOUNT_TYPE']=='Administrator' || $_SESSION['ACCOUNT_TYPE']=='Student affairs' ) {  ?>
                         <li>
                              <a href="<?php echo web_root; ?>admin/student/index.php" ><i class="fa fa-group fa-fw"></i>  Students <span class="fa arrow"></span></a>
                              <ul class="nav nav-second-level">
@@ -149,9 +149,9 @@ admin_confirm_logged_in();
                         <li>
                              <a href="#" ><i class="fa fa-user fa-fw"></i>  HR  <span class="fa arrow"></span> </a>
                              <ul class="nav nav-second-level">
-                                <li>  <a href="<?php echo web_root; ?>admin/HRinstructors/index.php" ><i class="fa fa-circle-o fa-fw"></i>  Instructors </a></li> 
+                                <li>  <a href="<?php echo web_root; ?>admin/HRinstructors/index.php" ><i class="fa fa-circle-o fa-fw"></i>  Inbox </a></li> 
                                 <li>
-                                     <a href="<?php echo web_root; ?>admin/HRofficers/index.php"><i class="fa fa-circle-o fa-fw"></i> Officers </a>
+                                     <a href="<?php echo web_root; ?>admin/HRofficers/index.php"><i class="fa fa-circle-o fa-fw"></i> Outbox </a>
                                 </li> 
                              </ul>
                         </li> 
@@ -160,11 +160,13 @@ admin_confirm_logged_in();
                     
                         </li> 
                       <?php } ?>
-                      <?php if ($_SESSION['ACCOUNT_TYPE']=='Administrator') {  ?>
-                      <li>
-                             <a href="<?php echo web_root; ?>admin/instructor/index.php" ><i class="fa fa-calendar fa-fw"></i> Calender  </a>
+                      <?php if ($_SESSION['ACCOUNT_TYPE']=='Administrator' || $_SESSION['ACCOUNT_TYPE']=='Scientific affairs' || $_SESSION['ACCOUNT_TYPE']=='Student affairs' ) {  ?>
+                        <li>
+                             <a href="<?php echo web_root; ?>admin/calendar/index.php" ><i class="fa fa-calendar fa-fw"></i> Calender  </a>
                     
                         </li> 
+                        <?php }  ?>
+                        <?php if ($_SESSION['ACCOUNT_TYPE']=='Administrator' || $_SESSION['ACCOUNT_TYPE']=='Scientific affairs') {  ?>
                         <li>
                             <a href="<?php echo web_root; ?>admin/postGraduate/index.php" ><i class="fa fa-graduation-cap fa-fw"></i> Post Graduate <span class="fa arrow"></span></a>
                              <ul class="nav nav-second-level">
@@ -173,39 +175,12 @@ admin_confirm_logged_in();
                                 <li><a href="<?php echo web_root; ?>admin/postGraduate/index.php"><i class="fa fa-circle-o fa-fw"></i> Biology </a></li> 
                                 <li><a href="<?php echo web_root; ?>admin/postGraduate/index.php" ><i class="fa fa-circle-o fa-fw"></i>  Physics </a></li>
                              </ul>
-                        </li> 
-                        <li>
-                            <!--<a href="#"><i class="fa  fa-gear fa-fw"></i> Maintenance <span class="fa arrow"></span></a>
-                            <ul class="nav nav-third-level">
-                                <li>
-                                     <a href="<?php echo web_root; ?>admin/maintenance/index.php" ><i class="fa fa-circle-o fa-fw"></i>  Set Semester </a>
-                                </li> 
-                                <li>
-                                     <a href="<?php echo web_root; ?>admin/department/index.php" ><i class="fa  fa-circle-o fa-fw"></i>  Department</a>
-                                </li> 
-                                <li>
-                                     <a href="<?php echo web_root; ?>admin/course/index.php" ><i class="fa  fa-circle-o fa-fw"></i>  Courses </a>
-                                 </li> 
-                                <li>
-                                     <a href="<?php echo web_root; ?>admin/subject/index.php"><i class="fa fa-circle-o fa-fw"></i> Curriculum </a>
-                                </li> 
-                                <li>
-                                     <a href="<?php echo web_root; ?>admin/sy/index.php"><i class="fa fa-circle-o fa-fw"></i> School Year </a>
-                                </li> 
-                                <li>
-                                     <a href="<?php echo web_root; ?>admin/level/index.php"><i class="fa fa-circle-o fa-fw"></i> Year Level </a>
-                                </li> 
-                                <li>
-                                     <a href="<?php echo web_root; ?>admin/section/index.php"><i class="fa fa-circle-o fa-fw"></i> Section </a>
-                                </li> 
-                            </ul> -->
-                            <!-- /.nav-third-level -->
-                        </li> 
+                        </li>  
                         <li>
                             <a href="<?php echo web_root; ?>admin/user/index.php" ><i class="fa fa-user fa-fw"></i> Users </a> 
                         </li> 
                          <?php }  ?>
-                         <?php if ($_SESSION['ACCOUNT_TYPE']=='Administrator' || $_SESSION['ACCOUNT_TYPE']=='Officer'  ) {  ?>
+                         <?php if ($_SESSION['ACCOUNT_TYPE']=='Administrator'  ) {  ?>
                         <li>
                             <a href="<?php echo web_root; ?>admin/report/index.php" ><i class="fa fa-info fa-fw"></i> Report </a> 
                         </li>
@@ -415,8 +390,10 @@ $('.date_pickerfrom').datetimepicker({
 
 
 $('.date_pickerto').datetimepicker({
-    format: 'mm/dd/yyyy',
+  format: 'mm/dd/yyyy',
+   startDate : '01/01/2000', 
     startDate : '01/01/2000', 
+   startDate : '01/01/2000', 
     language:  'en',
     weekStart: 1,
     todayBtn:  1,
@@ -668,10 +645,6 @@ $("#gosearch").click(function() {
 
     
 </script>
-<!-- <footer class=" fixed-bottom ">
-       
-       <div>© 2021 Copyright: Hiba Ithawi & Moheeb Tariq</div>
                    
-   </footer> -->
 </body>
 </html>
