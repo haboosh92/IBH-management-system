@@ -5,7 +5,6 @@ require_once ("../../include/initialize.php");
      }
 
 $action = (isset($_GET['action']) && $_GET['action'] != '') ? $_GET['action'] : '';
-
 switch ($action) {
 	case 'add' :
 	doInsert();
@@ -119,14 +118,6 @@ switch ($action) {
 	function doEdit(){
 	if(isset($_POST['save'])){
 
-// $sql="SELECT * FROM tblstudent WHERE ACC_USERNAME='" . $_POST['USER_NAME'] . "'";
-// $userresult = mysql_query($sql) or die(mysql_error());
-// $userStud  = mysql_fetch_assoc($userresult);
-
-// if($userStud){
-// 	message("Username is already in used.", "error");
-//     redirect(web_root."admin/student/index.php?view=view&id=".$_POST['IDNO']);
-// }else{
 	$age = date_diff(date_create($_POST['BIRTHDATE']),date_create('today'))->y;
  if ($age < 15){
        message("Invalid age. 15 years old and above is allowed.", "error");
@@ -157,30 +148,13 @@ switch ($action) {
 		message("Student has been updated!", "success");
 		redirect("index.php?view=view&id=".$_POST['IDNO']);
     }
-			
-	 
-// }
 
-		}
+	}
 	}
 
 
 	function doDelete(){
-		
-		// if (isset($_POST['selector'])==''){
-		// message("Select the records first before you delete!","info");
-		// redirect('index.php');
-		// }else{
 
-		// $id = $_POST['selector'];
-		// $key = count($id);
-
-		// for($i=0;$i<$key;$i++){
-
-		// 	$subj = New User();
-		// 	$subj->delete($id[$i]);
-
-		
 				$id = 	$_GET['id'];
 
 				$subj = New Subject();
@@ -188,8 +162,6 @@ switch ($action) {
 			 
 			message("User already Deleted!","info");
 			redirect('index.php');
-		// }
-		// }
 
 		
 	}
@@ -204,47 +176,7 @@ switch ($action) {
 
 				$pre="";
 				$idno = $_POST['IDNO'];
-				// echo $prerequisite = $_POST['PRE_REQUISITE'];
-
-
-				// // echo $array_subjcode = explode(',',$prerequisite);
-		 
-			 //   //  foreach ($array_subjcode as $subjcode) {
-				// 	 // echo   $subjcode;
-				 
-				// 	$sql = "SELECT * FROM subject s,grades g WHERE s.`SUBJ_ID`=g.`SUBJ_ID` AND s.`SUBJ_CODE` in ('{$prerequisite}') AND IDNO='{$idno}'";
-				// 	$mydb->setQuery($sql);
-				// 	$pre = $mydb->loadSingleResult(); 
-		 
-				// 	if ($pre->AVE < 75) {
-				// 		# code...
-				// 		echo "Cannot take this subject";
-				// 	}else{
-				// 		echo "Save";
-				// 	}
-				// }
- 
-			// $remark = '';
-			// if($_POST['AVERAGE']>=75){
-			// 	$remark = 'Passed';
-			// }else{
-			// 	$remark = 'Failed';
-			// }
-
-			// $grade = New Grade();  
-			// $grade->AVE					= $_POST['AVERAGE']; 
-			// $grade->REMARKS				= $remark;  
-			// $grade->update($_POST['GRADEID']);
-
-
-			// $studentsubject = New StudentSubjects(); 
-			// $studentsubject->AVERAGE	= $_POST['AVERAGE'];
-			// $studentsubject->OUTCOME 	=  $remark; 
-			// $studentsubject->updateSubject($_POST['SUBJ_ID'],$_POST['IDNO']);
-
- 
-			// message("[". $_POST['SUBJ_CODE'] ."] has been updated!", "success");
-			//  redirect("index.php?view=grades&id=".$_POST['IDNO']);
+			
 		}
 	} 
  
@@ -289,28 +221,5 @@ switch ($action) {
 	redirect("index.php");
  }
 
- function doResetPassword()
-{
-	global $mydb;
 
-	$sql = "SELECT * FROM `tblstudent` WHERE `IDNO`='".$_GET['id']."'";
-	$mydb->setQuery($sql);
-	$res  = $mydb->loadSingleResult();
-
-			$stud = New Student(); 
-			$stud->ACC_PASSWORD = sha1($res->IDNO);
-			$stud->update($res->IDNO);
-	# code...
-	
-		if ($res->ACCOUNTTYPE=='Officer') {
-			# code...
-				$user = New User();
-				$user->ACCOUNT_PASSWORD =  sha1($res->IDNO);
-				$user->update_officer($res->IDNO);
-
-		
-		}
-		redirect("index.php");
-		message("Password has been reset!","info");
-}
 ?>

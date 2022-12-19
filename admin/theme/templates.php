@@ -82,7 +82,7 @@ admin_confirm_logged_in();
 
                           <div class="divpic"> 
                          
-                            <?php if ($_SESSION['ACCOUNT_TYPE']=='SAffairs') {
+
                               # code...
                               echo '<a><img width="70" height="80" src="'.web_root.'/student/'.$res->STUDPHOTO.'" /></a>';
                             }else{ ?> 
@@ -391,6 +391,8 @@ $('.date_pickerfrom').datetimepicker({
 
 $('.date_pickerto').datetimepicker({
   format: 'mm/dd/yyyy',
+   startDate : '01/01/2000', 
+    startDate : '01/01/2000', 
    startDate : '01/01/2000', 
     language:  'en',
     weekStart: 1,

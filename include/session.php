@@ -140,18 +140,10 @@ function notifycheck(){
 
 
 
-        // if(isset($_GET['active'])){
-        //    $_SESSION['work'] = 'active' ;
-        // }elseif(isset($_GET['active'])){
-        //   $_SESSION['otherInfo']='active';
-        // }else{
-        //   $_SESSION['basicInfo']   = "active";
-        // }
         
       }
  }
 }
-
 
 
 

@@ -42,7 +42,7 @@
               <div class="col-md-8">
                   <label class="col-md-4 control-label" for="U_PASS">Password:</label>
                       <div class="col-md-8">
-                         <input class="form-control input-sm" id="U_PASS" name="U_PASS" placeholder="Account Password" type="Password" value="" required>
+
                       </div>
               </div>
           </div>
