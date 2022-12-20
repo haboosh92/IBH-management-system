@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2019 at 01:01 PM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 5.6.39
+-- Generation Time: Dec 20, 2022 at 07:45 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_studentmanagement`
+-- Database: `db_studentmanagement_2`
 --
 
 -- --------------------------------------------------------
@@ -31,200 +30,74 @@ SET time_zone = "+00:00";
 CREATE TABLE `course` (
   `COURSE_ID` int(11) NOT NULL,
   `COURSE_NAME` varchar(30) NOT NULL,
-  `COURSE_DESC` varchar(255) NOT NULL,
-  `DEPT_ID` int(11) NOT NULL,
-  `SETSEMESTER` varchar(90) NOT NULL
+  `COURSE_DESC` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `course`
 --
 
-INSERT INTO `course` (`COURSE_ID`, `COURSE_NAME`, `COURSE_DESC`, `DEPT_ID`, `SETSEMESTER`) VALUES
-(21, 'BSBA Financial Management', 'Bachelor of Science in Busines Administration ', 34, ''),
-(24, 'AB Philosophy', 'Bachelor of ARTS (AB)', 34, ''),
-(29, 'AB English', 'Bachelor of ARTS (AB)', 34, ''),
-(52, 'BSIT', 'Bachelor of Science in Information Technology', 33, '');
+INSERT INTO `course` (`COURSE_ID`, `COURSE_NAME`, `COURSE_DESC`) VALUES
+(1, 'Computer Science', 'Bachelor degree of Computer science '),
+(2, 'Chemistry', 'Bachelor degree of Chemistry science'),
+(3, 'Biology', 'Bachelor degree of Biology Science'),
+(4, 'Physics', 'Bachelor degree of Physics science'),
+(5, 'Mathematics', 'Bachelor degree of Mathematics science\n');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `department`
+-- Table structure for table `pst-graduate-std`
 --
 
-CREATE TABLE `department` (
-  `DEPT_ID` int(11) NOT NULL,
-  `DEPARTMENT_NAME` varchar(30) NOT NULL,
-  `DEPARTMENT_DESC` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `pst-graduate-std` (
+  `Id` int(10) UNSIGNED NOT NULL,
+  `FName` varchar(32) NOT NULL,
+  `MName` varchar(32) NOT NULL,
+  `LName` varchar(32) NOT NULL,
+  `Surname` varchar(32) NOT NULL,
+  `ContactNo` int(32) NOT NULL,
+  `Email` varchar(64) NOT NULL,
+  `ProgramType` varchar(32) NOT NULL,
+  `Course` varchar(32) NOT NULL,
+  `Date_Start` date NOT NULL,
+  `Final_Deadline` date NOT NULL,
+  `Note` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `department`
+-- Dumping data for table `pst-graduate-std`
 --
 
-INSERT INTO `department` (`DEPT_ID`, `DEPARTMENT_NAME`, `DEPARTMENT_DESC`) VALUES
-(33, 'IT', 'Information Technology Department'),
-(34, 'BITE', 'Business and IT Education'),
-(35, 'TEA', 'Teacher Education Department'),
-(36, 'arts', 'Arts Department');
+INSERT INTO `pst-graduate-std` (`Id`, `FName`, `MName`, `LName`, `Surname`, `ContactNo`, `Email`, `ProgramType`, `Course`, `Date_Start`, `Final_Deadline`, `Note`) VALUES
+(1, 'Hiba', 'A.', 'Dawood', 'Ithawi', 770000000, 'Hi@gmail.com', 'MSC', 'Computer Science', '2022-12-11', '2025-05-11', 'Trial data ');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `grades`
+-- Table structure for table `students`
 --
 
-CREATE TABLE `grades` (
-  `GRADE_ID` int(11) NOT NULL,
-  `IDNO` varchar(90) NOT NULL,
-  `SUBJ_ID` int(11) NOT NULL,
-  `FIRST` int(11) NOT NULL,
-  `SECOND` int(11) NOT NULL,
-  `THIRD` int(11) NOT NULL,
-  `FOURTH` int(11) NOT NULL,
-  `AVE` float NOT NULL,
-  `REMARKS` text NOT NULL,
-  `COMMENT` text NOT NULL,
-  `SEMS` varchar(90) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `grades`
---
-
-INSERT INTO `grades` (`GRADE_ID`, `IDNO`, `SUBJ_ID`, `FIRST`, `SECOND`, `THIRD`, `FOURTH`, `AVE`, `REMARKS`, `COMMENT`, `SEMS`) VALUES
-(1, '2018-SC-0001', 1, 0, 0, 0, 0, 80, 'Passed', '', 'First'),
-(2, '2018-SC-0001', 2, 0, 0, 0, 0, 67, 'Failed', '', 'First'),
-(3, '2018-SC-0001', 3, 0, 0, 0, 0, 0, '', '', 'First'),
-(4, '2018-SC-0001', 4, 0, 0, 0, 0, 0, '', '', 'First'),
-(5, '2018-SC-0001', 5, 0, 0, 0, 0, 0, '', '', 'First'),
-(6, '2018-SC-0001', 6, 0, 0, 0, 0, 0, '', '', 'First'),
-(7, '2018-SC-0001', 7, 0, 0, 0, 0, 0, '', '', 'First'),
-(8, '2018-SC-0001', 8, 0, 0, 0, 0, 0, '', '', 'Second'),
-(9, '2018-SC-0001', 9, 0, 0, 0, 0, 0, '', '', 'Second'),
-(10, '2018-SC-0001', 10, 0, 0, 0, 0, 0, '', '', 'Second'),
-(11, '2018-SC-0001', 11, 0, 0, 0, 0, 0, '', '', 'Second'),
-(12, '2018-SC-0001', 12, 0, 0, 0, 0, 0, '', '', 'Second'),
-(13, '2018-SC-0001', 13, 0, 0, 0, 0, 0, '', '', 'Second'),
-(14, '2018-SC-0001', 14, 0, 0, 0, 0, 0, '', '', 'Second'),
-(15, '2018-SC-0001', 15, 0, 0, 0, 0, 0, '', '', 'Second'),
-(16, '2018-SC-0001', 16, 0, 0, 0, 0, 0, '', '', 'First'),
-(17, '15-SC-0836', 1, 0, 0, 0, 0, 90, 'Passed', '', 'First'),
-(18, '15-SC-0836', 2, 0, 0, 0, 0, 0, '', '', 'First'),
-(19, '15-SC-0836', 3, 0, 0, 0, 0, 0, '', '', 'First'),
-(20, '15-SC-0836', 4, 0, 0, 0, 0, 0, '', '', 'First'),
-(21, '15-SC-0836', 5, 0, 0, 0, 0, 0, '', '', 'First'),
-(22, '15-SC-0836', 6, 0, 0, 0, 0, 0, '', '', 'First'),
-(23, '15-SC-0836', 7, 0, 0, 0, 0, 0, '', '', 'First'),
-(24, '15-SC-0836', 8, 0, 0, 0, 0, 0, '', '', 'Second'),
-(25, '15-SC-0836', 9, 0, 0, 0, 0, 0, '', '', 'Second'),
-(26, '15-SC-0836', 10, 0, 0, 0, 0, 0, '', '', 'Second'),
-(27, '15-SC-0836', 11, 0, 0, 0, 0, 0, '', '', 'Second'),
-(28, '15-SC-0836', 12, 0, 0, 0, 0, 0, '', '', 'Second'),
-(29, '15-SC-0836', 13, 0, 0, 0, 0, 0, '', '', 'Second'),
-(30, '15-SC-0836', 14, 0, 0, 0, 0, 0, '', '', 'Second'),
-(31, '15-SC-0836', 15, 0, 0, 0, 0, 0, '', '', 'Second'),
-(32, '15-SC-0836', 16, 0, 0, 0, 0, 0, '', '', 'First');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `studentsubjects`
---
-
-CREATE TABLE `studentsubjects` (
-  `STUDSUBJ_ID` int(11) NOT NULL,
-  `IDNO` varchar(90) NOT NULL,
-  `SUBJ_ID` int(11) NOT NULL,
-  `LEVEL` varchar(90) NOT NULL,
-  `SECTIONID` int(11) NOT NULL,
-  `SEMESTER` varchar(30) NOT NULL,
-  `SY` text NOT NULL,
-  `ATTEMP` int(11) NOT NULL,
-  `AVERAGE` double NOT NULL,
-  `OUTCOME` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `studentsubjects`
---
-
-INSERT INTO `studentsubjects` (`STUDSUBJ_ID`, `IDNO`, `SUBJ_ID`, `LEVEL`, `SECTIONID`, `SEMESTER`, `SY`, `ATTEMP`, `AVERAGE`, `OUTCOME`) VALUES
-(1, '2018-SC-0001', 1, 'First Year', 1, 'First', '2000-2001', 1, 0, ''),
-(2, '2018-SC-0001', 2, 'First Year', 0, 'First', '2000-2001', 1, 0, ''),
-(3, '2018-SC-0001', 3, 'First Year', 0, 'First', '2000-2001', 1, 0, ''),
-(4, '2018-SC-0001', 4, 'First Year', 0, 'First', '2000-2001', 1, 0, ''),
-(5, '2018-SC-0001', 5, 'First Year', 0, 'First', '2000-2001', 1, 0, ''),
-(6, '2018-SC-0001', 6, 'First Year', 0, 'First', '2000-2001', 1, 0, ''),
-(7, '2018-SC-0001', 7, 'First Year', 0, 'First', '2000-2001', 1, 0, ''),
-(8, '2018-SC-0001', 8, 'Fourth Year', 0, 'Second', '2000-2001', 1, 0, ''),
-(9, '2018-SC-0001', 9, 'First Year', 0, 'Second', '2000-2001', 1, 0, ''),
-(10, '2018-SC-0001', 10, 'First Year', 0, 'Second', '2000-2001', 1, 0, ''),
-(11, '2018-SC-0001', 11, 'First Year', 0, 'Second', '2000-2001', 1, 0, ''),
-(12, '2018-SC-0001', 12, 'First Year', 0, 'Second', '2000-2001', 1, 0, ''),
-(13, '2018-SC-0001', 13, 'First Year', 0, 'Second', '2000-2001', 1, 0, ''),
-(14, '2018-SC-0001', 14, 'First Year', 0, 'Second', '2000-2001', 1, 0, ''),
-(15, '2018-SC-0001', 15, 'First Year', 0, 'Second', '2000-2001', 1, 0, ''),
-(16, '2018-SC-0001', 16, 'Second Year', 0, 'First', '2000-2001', 1, 0, ''),
-(17, '15-SC-0836', 1, 'First Year', 1, 'First', 'Select', 1, 90, 'Passed'),
-(18, '15-SC-0836', 2, 'First Year', 0, 'First', 'Select', 1, 0, ''),
-(19, '15-SC-0836', 3, 'First Year', 0, 'First', 'Select', 1, 0, ''),
-(20, '15-SC-0836', 4, 'First Year', 0, 'First', 'Select', 1, 0, ''),
-(21, '15-SC-0836', 5, 'First Year', 0, 'First', 'Select', 1, 0, ''),
-(22, '15-SC-0836', 6, 'First Year', 0, 'First', 'Select', 1, 0, ''),
-(23, '15-SC-0836', 7, 'First Year', 0, 'First', 'Select', 1, 0, ''),
-(24, '15-SC-0836', 8, 'Third Year', 0, 'Second', 'Select', 1, 0, ''),
-(25, '15-SC-0836', 9, 'First Year', 0, 'Second', 'Select', 1, 0, ''),
-(26, '15-SC-0836', 10, 'First Year', 0, 'Second', 'Select', 1, 0, ''),
-(27, '15-SC-0836', 11, 'First Year', 0, 'Second', 'Select', 1, 0, ''),
-(28, '15-SC-0836', 12, 'First Year', 0, 'Second', 'Select', 1, 0, ''),
-(29, '15-SC-0836', 13, 'First Year', 0, 'Second', 'Select', 1, 0, ''),
-(30, '15-SC-0836', 14, 'First Year', 0, 'Second', 'Select', 1, 0, ''),
-(31, '15-SC-0836', 15, 'First Year', 0, 'Second', 'Select', 1, 0, ''),
-(32, '15-SC-0836', 16, 'Second Year', 0, 'First', 'Select', 1, 0, '');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `subject`
---
-
-CREATE TABLE `subject` (
-  `SUBJ_ID` int(11) NOT NULL,
-  `SUBJ_CODE` varchar(30) NOT NULL,
-  `SUBJ_DESCRIPTION` varchar(255) NOT NULL,
-  `UNIT` int(2) NOT NULL,
-  `PRE_REQUISITE` varchar(30) NOT NULL DEFAULT 'None',
-  `COURSE_ID` int(11) NOT NULL,
-  `YEARLEVEL` varchar(90) NOT NULL,
-  `SECTIONID` int(11) NOT NULL,
-  `AY` varchar(90) NOT NULL,
-  `SEMESTER` varchar(20) NOT NULL,
-  `PreTaken` tinyint(1) NOT NULL,
-  `CURRICULUM` varchar(90) NOT NULL DEFAULT 'New Curriculum'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `subject`
---
-
-INSERT INTO `subject` (`SUBJ_ID`, `SUBJ_CODE`, `SUBJ_DESCRIPTION`, `UNIT`, `PRE_REQUISITE`, `COURSE_ID`, `YEARLEVEL`, `SECTIONID`, `AY`, `SEMESTER`, `PreTaken`, `CURRICULUM`) VALUES
-(1, 'IT 101', 'IT Fundamentals', 3, 'NONE', 52, 'First Year', 1, '2000-2001', 'First', 0, 'New Curriculum'),
-(2, 'IT 102', 'Integrated Aplication Software and Productivity Tools', 3, 'NONE', 52, 'First Year', 1, '2000-2001', 'First', 0, 'New Curriculum'),
-(3, 'IT 103', 'Programming I', 3, 'NONE', 52, 'First Year', 1, '2000-2001', 'First', 0, 'New Curriculum'),
-(4, 'Math 101', 'College Algebra', 3, 'NONE', 52, 'First Year', 1, '2000-2001', 'First', 0, 'New Curriculum'),
-(5, 'Stat 102', 'Probability Statistics', 3, 'NONE', 52, 'First Year', 1, '2000-2001', 'First', 0, 'New Curriculum'),
-(6, 'PE 101', 'Physical Fitness', 3, 'NONE', 52, 'First Year', 1, '2000-2001', 'First', 0, 'New Curriculum'),
-(7, 'NSTP 1', 'ROTC / CWTS / LTS 1', 3, 'NONE', 52, 'First Year', 1, '2000-2001', 'First', 0, 'New Curriculum'),
-(8, 'IT 104', 'Programming 2', 3, 'IT 103', 52, 'First Year', 1, '2000-2001', 'Second', 0, 'New Curriculum'),
-(9, 'IT 201', 'Logic Design', 3, 'IT 101', 52, 'First Year', 1, '2000-2001', 'Second', 0, 'New Curriculum'),
-(10, 'Math 102', 'Plane Trigonometry', 3, 'NONE', 52, 'First Year', 1, '2000-2001', 'Second', 0, 'New Curriculum'),
-(11, 'Eng 102', 'Speech Communication with Debate', 3, 'NONE', 52, 'First Year', 1, '2000-2001', 'Second', 0, 'New Curriculum'),
-(12, 'NatSci 101', 'Biological Science', 3, 'NONE', 52, 'First Year', 1, '2000-2001', 'Second', 0, 'New Curriculum'),
-(13, 'SocSci 101', 'Philippine History', 3, 'NONE', 52, 'First Year', 1, '2000-2001', 'Second', 0, 'New Curriculum'),
-(14, 'PE 102', 'Rhythmic Activities, Folk and Social Dancing', 2, 'NONE', 52, 'First Year', 1, '2000-2001', 'Second', 0, 'New Curriculum'),
-(15, 'NSTP 2', 'ROTC / CWTS / LTS 2', 3, 'NONE', 52, 'First Year', 1, '2000-2001', 'Second', 0, 'New Curriculum'),
-(16, 'IT 105', 'Computer Organization', 3, 'IT  201', 52, 'Second Year', 1, '2000-2001', 'First', 0, 'New Curriculum');
+CREATE TABLE `students` (
+  `Id_std` int(11) NOT NULL,
+  `FName` varchar(32) NOT NULL,
+  `MName` varchar(32) NOT NULL,
+  `LName` varchar(32) NOT NULL,
+  `Surname` varchar(32) NOT NULL,
+  `Address` varchar(100) NOT NULL,
+  `Sex` varchar(20) NOT NULL,
+  `CivilS` varchar(20) NOT NULL,
+  `POB` varchar(32) NOT NULL,
+  `DOB` date NOT NULL,
+  `Nationality` varchar(32) NOT NULL,
+  `Religion` varchar(32) NOT NULL,
+  `ContactNo` int(20) NOT NULL,
+  `Email` varchar(64) NOT NULL,
+  `COURSE_NAME` varchar(32) NOT NULL,
+  `Course_type` varchar(20) NOT NULL,
+  `Note` varchar(200) NOT NULL,
+  `YearsOfStudy` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -245,7 +118,10 @@ CREATE TABLE `tblannouncement` (
 --
 
 INSERT INTO `tblannouncement` (`ANNOUNCEMENTID`, `ANNOUNCEMENT_TEXT`, `ANNOUNCEMENT_WHAT`, `DATEPOSTED`, `AUTHOR`) VALUES
-(2019009, 'asd', '<p>asdasd</p>', '2019-11-28 11:43:45', 'Janobe');
+(2019009, 'hi', '<p>hi</p>', '2019-11-28 11:43:45', 'admin'),
+(20220010, 'helloooooo', '<p>helllllllo woooooooooorld</p>', '2022-07-25 02:33:57', 'admin'),
+(20220013, 'mmm', '<p><b>hhh</b></p>', '2022-12-12 08:11:42', 'admin'),
+(20220014, 'mmm', '<blockquote><p><i><u>kgghyufvytf</u></i></p></blockquote>', '2022-12-14 07:25:49', 'admin');
 
 -- --------------------------------------------------------
 
@@ -255,24 +131,13 @@ INSERT INTO `tblannouncement` (`ANNOUNCEMENTID`, `ANNOUNCEMENT_TEXT`, `ANNOUNCEM
 
 CREATE TABLE `tblauto` (
   `ID` int(11) NOT NULL,
-  `autocode` varchar(255) DEFAULT NULL,
-  `autoname` varchar(255) DEFAULT NULL,
-  `appendchar` varchar(255) DEFAULT NULL,
-  `autostart` varchar(30) DEFAULT '0',
-  `autoend` int(11) DEFAULT '0',
-  `incrementvalue` int(11) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `tblauto`
---
-
-INSERT INTO `tblauto` (`ID`, `autocode`, `autoname`, `appendchar`, `autostart`, `autoend`, `incrementvalue`) VALUES
-(1, 'Asset', 'Asset', 'ASitem', '0', 3, 1),
-(2, 'Trans', 'Transaction', 'TrAnS', '1', 5, 1),
-(3, 'SIDNO', 'IDNO', '2015', 'SC-000', 4, 1),
-(4, 'EMPLOYEE', 'EMPID', '020010', '0', 2, 1),
-(5, 'BLOGID', 'Announcement', '1', '00', 10, 1);
+  `autocode` varchar(255) NOT NULL,
+  `autoname` varchar(255) NOT NULL,
+  `appendchar` varchar(255) NOT NULL,
+  `autostart` varchar(30) NOT NULL,
+  `autoend` int(11) NOT NULL,
+  `incrementvalue` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -292,8 +157,7 @@ CREATE TABLE `tblexpenses` (
 --
 
 INSERT INTO `tblexpenses` (`EXPENSEID`, `AMOUNT`, `DESCRIPTION`, `COURSE_ID`) VALUES
-(4, 300, 'Fee', 52),
-(5, 400, 'New Fee', 52);
+(6, 400, 'nothing', 2);
 
 -- --------------------------------------------------------
 
@@ -310,37 +174,6 @@ CREATE TABLE `tblfees` (
   `USERNAME` varchar(90) NOT NULL,
   `TRANSDATE` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tblfees`
---
-
-INSERT INTO `tblfees` (`FEEID`, `EXPENSEID`, `IDNO`, `PAYMENT`, `REMARKS`, `USERNAME`, `TRANSDATE`) VALUES
-(2, 0, '', 0, '', '', '0000-00-00 00:00:00'),
-(3, 5, '2018-SC-0001', 400, 'asd', 'admin', '2019-11-28 00:00:00');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tblinstructorsubject`
---
-
-CREATE TABLE `tblinstructorsubject` (
-  `INST_ID` int(11) NOT NULL,
-  `ACCOUNT_ID` int(11) NOT NULL,
-  `SUBJ_ID` int(11) NOT NULL,
-  `SECTIONID` int(11) NOT NULL,
-  `AY` varchar(90) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tblinstructorsubject`
---
-
-INSERT INTO `tblinstructorsubject` (`INST_ID`, `ACCOUNT_ID`, `SUBJ_ID`, `SECTIONID`, `AY`) VALUES
-(4, 13, 1, 1, '2000-2001'),
-(5, 13, 2, 1, '2000-2001'),
-(6, 13, 3, 1, '2000-2001');
 
 -- --------------------------------------------------------
 
@@ -532,69 +365,151 @@ INSERT INTO `tbllogs` (`LOGID`, `USERID`, `LOGDATETIME`, `LOGROLE`, `LOGMODE`) V
 (147, 1, '2019-11-28 11:33:52', 'Administrator', 'Logged in'),
 (148, 18, '2019-11-28 11:38:54', 'Officer', 'Logged out'),
 (149, 1, '2019-11-28 11:43:39', 'Administrator', 'Logged in'),
-(150, 1, '2019-11-28 13:00:16', 'Administrator', 'Logged out');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tblsection`
---
-
-CREATE TABLE `tblsection` (
-  `SECTIONID` int(11) NOT NULL,
-  `SECTION` varchar(90) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tblsection`
---
-
-INSERT INTO `tblsection` (`SECTIONID`, `SECTION`) VALUES
-(1, 'A'),
-(2, 'B');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tblsemester`
---
-
-CREATE TABLE `tblsemester` (
-  `SEMID` int(11) NOT NULL,
-  `SEMESTER` varchar(90) NOT NULL,
-  `SETSEM` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tblsemester`
---
-
-INSERT INTO `tblsemester` (`SEMID`, `SEMESTER`, `SETSEM`) VALUES
-(1, 'First', 1),
-(2, 'Second', 0),
-(3, 'Summer', 0);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tblstuddetails`
---
-
-CREATE TABLE `tblstuddetails` (
-  `DETAIL_ID` int(11) NOT NULL,
-  `GUARDIAN` varchar(255) NOT NULL,
-  `GUARDIAN_ADDRESS` varchar(255) NOT NULL,
-  `GCONTACT` varchar(40) NOT NULL,
-  `IDNO` varchar(90) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tblstuddetails`
---
-
-INSERT INTO `tblstuddetails` (`DETAIL_ID`, `GUARDIAN`, `GUARDIAN_ADDRESS`, `GCONTACT`, `IDNO`) VALUES
-(1, 'Bless Paredes', '', '09306587988', '2018-SC-0001'),
-(2, '', '', '', '15-SC-0836');
+(150, 1, '2019-11-28 13:00:16', 'Administrator', 'Logged out'),
+(151, 1, '2022-06-23 10:31:29', 'Administrator', 'Logged out'),
+(152, 1, '2022-06-23 10:31:55', 'Administrator', 'Logged in'),
+(153, 1, '2022-06-23 10:32:13', 'Administrator', 'Logged out'),
+(154, 13, '2022-06-23 10:32:29', 'Instructor', 'Logged in'),
+(155, 13, '2022-06-23 10:33:59', 'Instructor', 'Logged out'),
+(156, 1, '2022-06-23 10:34:04', 'Administrator', 'Logged in'),
+(157, 1, '2022-06-23 10:42:56', 'Administrator', 'Logged in'),
+(158, 1, '2022-07-17 00:53:48', 'Administrator', 'Logged in'),
+(159, 1, '2022-07-17 00:53:48', 'Administrator', 'Logged in'),
+(160, 1, '2022-07-17 01:12:12', 'Administrator', 'Logged out'),
+(161, 15, '2022-07-17 01:12:49', 'HR', 'Logged in'),
+(162, 15, '2022-07-17 01:12:49', 'HR', 'Logged in'),
+(163, 15, '2022-07-17 01:12:53', 'HR', 'Logged in'),
+(164, 15, '2022-07-17 01:12:53', 'HR', 'Logged in'),
+(165, 15, '2022-07-17 01:13:38', 'HR', 'Logged out'),
+(166, 1, '2022-07-17 01:13:43', 'Administrator', 'Logged in'),
+(167, 1, '2022-07-25 09:26:24', 'Administrator', 'Logged out'),
+(168, 1, '2022-07-25 09:26:35', 'Administrator', 'Logged in'),
+(169, 1, '2022-07-25 09:32:16', 'Administrator', 'Logged out'),
+(170, 15, '2022-07-25 09:32:24', 'HR', 'Logged in'),
+(171, 15, '2022-07-25 09:33:40', 'HR', 'Logged out'),
+(172, 1, '2022-07-25 09:33:53', 'Administrator', 'Logged in'),
+(173, 1, '2022-07-25 09:34:11', 'Administrator', 'Logged out'),
+(174, 13, '2022-07-25 09:34:26', 'Instructor', 'Logged in'),
+(175, 13, '2022-07-25 09:35:21', 'Instructor', 'Logged out'),
+(176, 1, '2022-07-25 09:35:30', 'Administrator', 'Logged in'),
+(177, 1, '2022-09-12 08:42:06', 'Administrator', 'Logged out'),
+(178, 15, '2022-09-12 08:42:24', 'HR', 'Logged in'),
+(179, 15, '2022-09-12 08:42:52', 'HR', 'Logged out'),
+(180, 1, '2022-09-12 08:42:56', 'Administrator', 'Logged in'),
+(181, 1, '2022-11-06 09:18:21', 'Administrator', 'Logged out'),
+(182, 15, '2022-11-06 09:18:49', 'HR', 'Logged in'),
+(183, 15, '2022-11-06 09:45:11', 'HR', 'Logged out'),
+(184, 1, '2022-11-06 09:45:17', 'Administrator', 'Logged in'),
+(185, 1, '2022-12-06 07:00:44', 'Administrator', 'Logged out'),
+(186, 1, '2022-12-06 07:00:50', 'Administrator', 'Logged in'),
+(187, 1, '2022-12-06 07:02:59', 'Administrator', 'Logged out'),
+(188, 1, '2022-12-06 07:03:32', 'Administrator', 'Logged in'),
+(189, 1, '2022-12-06 09:15:32', 'Administrator', 'Logged out'),
+(190, 15, '2022-12-06 09:15:38', 'HR', 'Logged in'),
+(191, 15, '2022-12-06 09:15:53', 'HR', 'Logged out'),
+(192, 1, '2022-12-06 09:16:07', 'Administrator', 'Logged in'),
+(193, 1, '2022-12-15 08:31:08', 'Administrator', 'Logged out'),
+(194, 21, '2022-12-15 08:33:00', 'Administrator', 'Logged in'),
+(195, 21, '2022-12-15 08:40:45', 'Administrator', 'Logged out'),
+(196, 23, '2022-12-15 08:40:48', 'Student affairs', 'Logged in'),
+(197, 23, '2022-12-15 08:41:06', 'Student affairs', 'Logged out'),
+(198, 22, '2022-12-15 08:41:25', 'Administrator', 'Logged in'),
+(199, 22, '2022-12-15 08:41:54', 'Administrator', 'Logged out'),
+(200, 15, '2022-12-15 08:42:03', 'HR', 'Logged in'),
+(201, 15, '2022-12-15 08:42:11', 'HR', 'Logged out'),
+(202, 23, '2022-12-15 08:42:14', 'Student affairs', 'Logged in'),
+(203, 23, '2022-12-15 08:42:29', 'Student affairs', 'Logged out'),
+(204, 23, '2022-12-15 08:45:46', 'Student affairs', 'Logged in'),
+(205, 23, '2022-12-15 08:45:50', 'Student affairs', 'Logged out'),
+(206, 23, '2022-12-15 09:05:48', 'Student affairs', 'Logged in'),
+(207, 23, '2022-12-15 09:22:15', 'Student affairs', 'Logged out'),
+(208, 22, '2022-12-15 09:22:21', 'Administrator', 'Logged in'),
+(209, 22, '2022-12-15 09:28:30', 'Administrator', 'Logged out'),
+(210, 1, '2022-12-15 09:28:36', 'Administrator', 'Logged in'),
+(211, 1, '2022-12-15 09:44:28', 'Administrator', 'Logged out'),
+(212, 23, '2022-12-15 09:44:31', 'Student affairs', 'Logged in'),
+(213, 23, '2022-12-15 09:45:56', 'Student affairs', 'Logged out'),
+(214, 21, '2022-12-15 09:46:09', 'Scientific affairs', 'Logged in'),
+(215, 21, '2022-12-15 09:53:25', 'Scientific affairs', 'Logged out'),
+(216, 23, '2022-12-15 09:54:00', 'Student affairs', 'Logged in'),
+(217, 23, '2022-12-15 09:56:04', 'Student affairs', 'Logged out'),
+(218, 22, '2022-12-15 09:57:24', 'Administrator', 'Logged in'),
+(219, 22, '2022-12-15 10:08:12', 'Administrator', 'Logged out'),
+(220, 15, '2022-12-15 10:08:17', 'HR', 'Logged in'),
+(221, 15, '2022-12-15 10:17:07', 'HR', 'Logged out'),
+(222, 23, '2022-12-15 10:17:08', 'Student affairs', 'Logged in'),
+(223, 23, '2022-12-15 10:17:17', 'Student affairs', 'Logged out'),
+(224, 1, '2022-12-15 10:19:10', 'Administrator', 'Logged in'),
+(225, 1, '2022-12-15 10:21:56', 'Administrator', 'Logged out'),
+(226, 1, '2022-12-15 10:22:41', 'Administrator', 'Logged in'),
+(227, 1, '2022-12-15 10:23:22', 'Administrator', 'Logged out'),
+(228, 1, '2022-12-15 10:24:07', 'Administrator', 'Logged in'),
+(229, 1, '2022-12-15 10:25:52', 'Administrator', 'Logged out'),
+(230, 26, '2022-12-15 10:25:55', 'Chemistry dep', 'Logged in'),
+(231, 26, '2022-12-15 10:29:44', 'Chemistry dep', 'Logged out'),
+(232, 26, '2022-12-15 10:29:46', 'Chemistry dep', 'Logged in'),
+(233, 26, '2022-12-15 10:33:18', 'Chemistry dep', 'Logged out'),
+(234, 1, '2022-12-15 10:33:37', 'Administrator', 'Logged in'),
+(235, 1, '2022-12-15 21:15:43', 'Administrator', 'Logged out'),
+(236, 26, '2022-12-15 21:15:45', 'Chemistry dep', 'Logged in'),
+(237, 26, '2022-12-17 21:04:45', 'Chemistry dep', 'Logged out'),
+(238, 26, '2022-12-17 21:05:33', 'Chemistry dep', 'Logged in'),
+(239, 26, '2022-12-17 21:05:36', 'Chemistry dep', 'Logged out'),
+(240, 1, '2022-12-17 21:05:43', 'Administrator', 'Logged in'),
+(241, 1, '2022-12-17 23:16:34', 'Administrator', 'Logged out'),
+(242, 30, '2022-12-17 23:16:39', 'Biology dep', 'Logged in'),
+(243, 30, '2022-12-17 23:16:47', 'Biology dep', 'Logged out'),
+(244, 26, '2022-12-17 23:16:50', 'Chemistry dep', 'Logged in'),
+(245, 26, '2022-12-17 23:16:58', 'Chemistry dep', 'Logged out'),
+(246, 30, '2022-12-17 23:19:18', 'Biology dep', 'Logged in'),
+(247, 30, '2022-12-17 23:19:23', 'Biology dep', 'Logged out'),
+(248, 22, '2022-12-17 23:19:27', 'Administrator', 'Logged in'),
+(249, 22, '2022-12-17 23:38:59', 'Administrator', 'Logged out'),
+(250, 23, '2022-12-17 23:39:04', 'Student affairs', 'Logged in'),
+(251, 23, '2022-12-18 00:24:09', 'Student affairs', 'Logged out'),
+(252, 22, '2022-12-18 00:24:13', 'Administrator', 'Logged in'),
+(253, 22, '2022-12-18 06:43:54', 'Administrator', 'Logged out'),
+(254, 22, '2022-12-18 07:09:27', 'Administrator', 'Logged in'),
+(255, 22, '2022-12-18 07:10:16', 'Administrator', 'Logged out'),
+(256, 23, '2022-12-18 07:10:26', 'Student affairs', 'Logged in'),
+(257, 23, '2022-12-18 07:10:41', 'Student affairs', 'Logged out'),
+(258, 21, '2022-12-18 07:10:53', 'Scientific affairs', 'Logged in'),
+(259, 21, '2022-12-18 07:11:05', 'Scientific affairs', 'Logged out'),
+(260, 22, '2022-12-18 07:11:25', 'Administrator', 'Logged in'),
+(261, 22, '2022-12-18 10:12:52', 'Administrator', 'Logged out'),
+(262, 21, '2022-12-18 10:13:00', 'Scientific affairs', 'Logged in'),
+(263, 21, '2022-12-18 10:50:29', 'Scientific affairs', 'Logged out'),
+(264, 22, '2022-12-18 10:50:36', 'Administrator', 'Logged in'),
+(265, 22, '2022-12-18 10:51:48', 'Administrator', 'Logged out'),
+(266, 21, '2022-12-18 10:51:56', 'Scientific affairs', 'Logged in'),
+(267, 21, '2022-12-19 07:17:19', 'Scientific affairs', 'Logged out'),
+(268, 30, '2022-12-19 07:17:22', 'Biology dep', 'Logged in'),
+(269, 30, '2022-12-19 07:17:26', 'Biology dep', 'Logged out'),
+(270, 27, '2022-12-19 07:17:30', 'Computer dep', 'Logged in'),
+(271, 27, '2022-12-19 08:29:28', 'Computer dep', 'Logged out'),
+(272, 22, '2022-12-19 08:31:16', 'Administrator', 'Logged in'),
+(273, 22, '2022-12-19 09:14:24', 'Administrator', 'Logged out'),
+(274, 30, '2022-12-19 09:14:26', 'Biology dep', 'Logged in'),
+(275, 30, '2022-12-19 09:14:36', 'Biology dep', 'Logged out'),
+(276, 27, '2022-12-19 09:14:40', 'Computer dep', 'Logged in'),
+(277, 27, '2022-12-19 10:12:12', 'Computer dep', 'Logged out'),
+(278, 22, '2022-12-19 10:12:17', 'Administrator', 'Logged in'),
+(279, 22, '2022-12-19 10:24:14', 'Administrator', 'Logged out'),
+(280, 22, '2022-12-19 10:24:19', 'Administrator', 'Logged in'),
+(281, 22, '2022-12-19 10:33:24', 'Administrator', 'Logged out'),
+(282, 30, '2022-12-19 10:33:28', 'Biology dep', 'Logged in'),
+(283, 30, '2022-12-19 10:33:37', 'Biology dep', 'Logged out'),
+(284, 27, '2022-12-19 10:33:41', 'Computer dep', 'Logged in'),
+(285, 27, '2022-12-19 10:33:46', 'Computer dep', 'Logged out'),
+(286, 30, '2022-12-19 10:46:06', 'Biology dep', 'Logged in'),
+(287, 30, '2022-12-19 10:46:17', 'Biology dep', 'Logged out'),
+(288, 22, '2022-12-19 10:58:39', 'Administrator', 'Logged in'),
+(289, 22, '2022-12-19 21:05:38', 'Administrator', 'Logged out'),
+(290, 15, '2022-12-19 21:05:42', 'HR', 'Logged in'),
+(291, 15, '2022-12-19 21:07:21', 'HR', 'Logged out'),
+(292, 30, '2022-12-19 21:07:23', 'Biology dep', 'Logged in'),
+(293, 30, '2022-12-19 21:07:28', 'Biology dep', 'Logged out'),
+(294, 22, '2022-12-19 21:07:31', 'Administrator', 'Logged in');
 
 -- --------------------------------------------------------
 
@@ -649,7 +564,8 @@ CREATE TABLE `tblsy` (
 --
 
 INSERT INTO `tblsy` (`AYID`, `SY`) VALUES
-(1, '2000-2001');
+(1, '2021-2022'),
+(2, '2022-2023');
 
 -- --------------------------------------------------------
 
@@ -673,10 +589,17 @@ CREATE TABLE `useraccounts` (
 --
 
 INSERT INTO `useraccounts` (`ACCOUNT_ID`, `ACCOUNT_NAME`, `ACCOUNT_USERNAME`, `ACCOUNT_PASSWORD`, `ACCOUNT_TYPE`, `EMPID`, `POSITION`, `USERIMAGE`) VALUES
-(1, 'Janobe', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Administrator', '1234', '', 'photos/JANOBE.png'),
-(13, 'janobe', 'i', '042dc4512fa3d391c5170cf3aa61e6a638f84342', 'Instructor', '', '', ''),
-(15, 'Evelyn B. Lomboy', 'SNCA-0001', '5bce3b6bb2c3dabfc8d74b2ef25cd32876a4f214', 'Instructor', '', '', ''),
-(18, 'asd asd', '2018-SC-0001', '0bd6f980e6605d114f65981d40c8259d66ec7c49', 'Officer', '2018-SC-0001', 'Vice-President', '');
+(1, 'admin', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Administrator', '1234', '', 'photos/login.png'),
+(15, 'HR1', 'HR1', 'a36aa7077a741713a61cf465988d107ab205042f', 'HR', '', '', ''),
+(18, 'officer', 'officer', 'f90409b98ffb61424a01b4bb718aa602cebd5ee2', 'Officer', '2018-SC-0001', 'Vice-President', ''),
+(21, 'scientific affairs ', 'Scientific affairs', '707c2130541bb2d33b0bf5138216cc7bafcb84ab', 'Scientific affairs', '5678', 'Dean assistant', ''),
+(22, 'Dean', 'Dean', '0e21b200d4510338e7a9f9c7555b324bf596e7a2', 'Administrator', '', '', 'photos/login.png'),
+(23, 'drKamal', 'drKamal', 'afa02725c67f1defcb34ce4212e4125df284329e', 'Student affairs', '', '', ''),
+(26, 'Chemistry dep', 'Chemistry dep', '7336edcf3ea1c50c0811827b877bff24a1dd8ca6', 'Chemistry dep', '', '', 'photos/login.png'),
+(27, 'Computer dep', 'Computer dep', '746281b0ec4a1cde4e43d4f1f96a2c77f1b283a1', 'Computer dep', '', '', ''),
+(28, 'Mathematics dep', 'Mathematics dep', '31b5ffcec1221405aa6f7a0b6cf29a485358418e', 'Mathematics dep', '', '', ''),
+(29, 'Physics dep', 'Physics dep', '01146150202aa49130b9a4d5728687bdf38e9f7b', 'Physics dep', '', '', ''),
+(30, 'Biology dep', 'Biology dep', '623c5970c55f473c8075f39d3eeb0890b35cb514', 'Biology dep', '', '', '');
 
 --
 -- Indexes for dumped tables
@@ -686,49 +609,25 @@ INSERT INTO `useraccounts` (`ACCOUNT_ID`, `ACCOUNT_NAME`, `ACCOUNT_USERNAME`, `A
 -- Indexes for table `course`
 --
 ALTER TABLE `course`
-  ADD PRIMARY KEY (`COURSE_ID`),
-  ADD KEY `DEPT_ID` (`DEPT_ID`);
+  ADD PRIMARY KEY (`COURSE_ID`);
 
 --
--- Indexes for table `department`
+-- Indexes for table `pst-graduate-std`
 --
-ALTER TABLE `department`
-  ADD PRIMARY KEY (`DEPT_ID`);
+ALTER TABLE `pst-graduate-std`
+  ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `grades`
+-- Indexes for table `students`
 --
-ALTER TABLE `grades`
-  ADD PRIMARY KEY (`GRADE_ID`),
-  ADD KEY `IDNO` (`IDNO`);
-
---
--- Indexes for table `studentsubjects`
---
-ALTER TABLE `studentsubjects`
-  ADD PRIMARY KEY (`STUDSUBJ_ID`),
-  ADD KEY `IDNO` (`IDNO`),
-  ADD KEY `SUBJ_ID` (`SUBJ_ID`);
-
---
--- Indexes for table `subject`
---
-ALTER TABLE `subject`
-  ADD PRIMARY KEY (`SUBJ_ID`),
-  ADD KEY `COURSE_ID` (`COURSE_ID`);
+ALTER TABLE `students`
+  ADD PRIMARY KEY (`Id_std`);
 
 --
 -- Indexes for table `tblannouncement`
 --
 ALTER TABLE `tblannouncement`
   ADD PRIMARY KEY (`ANNOUNCEMENTID`);
-
---
--- Indexes for table `tblauto`
---
-ALTER TABLE `tblauto`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `autocode` (`autocode`);
 
 --
 -- Indexes for table `tblexpenses`
@@ -743,12 +642,6 @@ ALTER TABLE `tblfees`
   ADD PRIMARY KEY (`FEEID`);
 
 --
--- Indexes for table `tblinstructorsubject`
---
-ALTER TABLE `tblinstructorsubject`
-  ADD PRIMARY KEY (`INST_ID`);
-
---
 -- Indexes for table `tbllevel`
 --
 ALTER TABLE `tbllevel`
@@ -759,25 +652,6 @@ ALTER TABLE `tbllevel`
 --
 ALTER TABLE `tbllogs`
   ADD PRIMARY KEY (`LOGID`);
-
---
--- Indexes for table `tblsection`
---
-ALTER TABLE `tblsection`
-  ADD PRIMARY KEY (`SECTIONID`);
-
---
--- Indexes for table `tblsemester`
---
-ALTER TABLE `tblsemester`
-  ADD PRIMARY KEY (`SEMID`);
-
---
--- Indexes for table `tblstuddetails`
---
-ALTER TABLE `tblstuddetails`
-  ADD PRIMARY KEY (`DETAIL_ID`),
-  ADD KEY `IDNO` (`IDNO`);
 
 --
 -- Indexes for table `tblstudent`
@@ -807,61 +681,37 @@ ALTER TABLE `useraccounts`
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
-  MODIFY `COURSE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `COURSE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
--- AUTO_INCREMENT for table `department`
+-- AUTO_INCREMENT for table `pst-graduate-std`
 --
-ALTER TABLE `department`
-  MODIFY `DEPT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+ALTER TABLE `pst-graduate-std`
+  MODIFY `Id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `grades`
+-- AUTO_INCREMENT for table `students`
 --
-ALTER TABLE `grades`
-  MODIFY `GRADE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
-
---
--- AUTO_INCREMENT for table `studentsubjects`
---
-ALTER TABLE `studentsubjects`
-  MODIFY `STUDSUBJ_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
-
---
--- AUTO_INCREMENT for table `subject`
---
-ALTER TABLE `subject`
-  MODIFY `SUBJ_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+ALTER TABLE `students`
+  MODIFY `Id_std` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tblannouncement`
 --
 ALTER TABLE `tblannouncement`
-  MODIFY `ANNOUNCEMENTID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2019010;
-
---
--- AUTO_INCREMENT for table `tblauto`
---
-ALTER TABLE `tblauto`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ANNOUNCEMENTID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20220015;
 
 --
 -- AUTO_INCREMENT for table `tblexpenses`
 --
 ALTER TABLE `tblexpenses`
-  MODIFY `EXPENSEID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `EXPENSEID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tblfees`
 --
 ALTER TABLE `tblfees`
   MODIFY `FEEID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `tblinstructorsubject`
---
-ALTER TABLE `tblinstructorsubject`
-  MODIFY `INST_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbllevel`
@@ -873,25 +723,7 @@ ALTER TABLE `tbllevel`
 -- AUTO_INCREMENT for table `tbllogs`
 --
 ALTER TABLE `tbllogs`
-  MODIFY `LOGID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
-
---
--- AUTO_INCREMENT for table `tblsection`
---
-ALTER TABLE `tblsection`
-  MODIFY `SECTIONID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `tblsemester`
---
-ALTER TABLE `tblsemester`
-  MODIFY `SEMID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `tblstuddetails`
---
-ALTER TABLE `tblstuddetails`
-  MODIFY `DETAIL_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `LOGID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=295;
 
 --
 -- AUTO_INCREMENT for table `tblstudent`
@@ -903,13 +735,13 @@ ALTER TABLE `tblstudent`
 -- AUTO_INCREMENT for table `tblsy`
 --
 ALTER TABLE `tblsy`
-  MODIFY `AYID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `AYID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `useraccounts`
 --
 ALTER TABLE `useraccounts`
-  MODIFY `ACCOUNT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `ACCOUNT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
