@@ -30,7 +30,7 @@ function doInsert(){
         }
         else{
            $pstStudent                  =       new postGraduateStd();
-           $res = $pstStudent->single_student($_POST['STUDID']);
+           $res = $pstStudent->single_student($_POST['Id']);
 							if ($res) {
 								# code...
 								message("Id number is already exist.","error");
@@ -49,8 +49,8 @@ function doInsert(){
            $pstStudent->FinalDeadline   =       date_format(date_create($_POST['FinalDeadline']),'Y-m-d');
            $pstStudent->create();
 
-           //$studAuto = New Autonumber();
-           //$studAuto->studauto_update();
+           $studAuto = New Autonumber();
+           $studAuto->studauto_update();
 
             message("New student created successfully!", "success");
            redirect("index.php");
