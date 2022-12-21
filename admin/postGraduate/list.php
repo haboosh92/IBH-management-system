@@ -37,18 +37,19 @@
                                          $currentStd = $mydb->loadResultList();
                                          foreach ($currentStd as $result) {
                                              # code...
-                                             echo "<tr>
-                                                  <td>" .$result->Id."</td>
-                                                  <td>" .$result->FName."</td>
-                                                  <td>" .$result->Surname."</td>
-                                                  <td>" .$result->ContactNo."</td>
-                                                  <td>" .$result->Email."</td>
-                                                  <td>" .$result->ProgramType."</td>
-                                                  <td>" .$result->Course."</td>
-                                                  <td>" .$result->Date_Start."</td>
-                                                  <td>" .$result->Final_Deadline."</td>
-                                                  <td>" .$result->Note."</td>
-                                             </tr>";
+                                             echo '<tr>
+                                                       <td>' .$result->Id.'</td>
+                                                       <td>' .$result->FName.'</td>
+                                                       <td>' .$result->Surname.'</td>
+                                                       <td>' .$result->ContactNo.'</td>
+                                                       <td>' .$result->Email.'</td>
+                                                       <td>' .$result->ProgramType.'</td>
+                                                       <td>' .$result->Course.'</td>
+                                                       <td>' .$result->Date_Start.'</td>
+                                                       <td>' .$result->Final_Deadline.'</td>
+                                                       <td>' .$result->Note.'</td>
+                                                       <td align="center"> <a title="Edit" href="index.php?view=edit&id=' .$result->Id.'" class="btn btn-primary btn-xs"> <span class="fa fa-edit fw-fa"></span> Edit </a></td>
+                                                  </tr>';
                                          }
                                     }
                                    ?>
