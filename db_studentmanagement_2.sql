@@ -69,7 +69,7 @@ CREATE TABLE `pst-graduate-std` (
 -- Dumping data for table `pst-graduate-std`
 --
 
-INSERT INTO `pst-graduate-std` (`Id`, `FName`, `MName`, `LName`, `Surname`, `ContactNo`, `Email`, `ProgramType`, `Course`, `Date_Start`, `Final_Deadline`, `Note`) VALUES
+INSERT INTO `pstgraduatestd` (`Id`, `FName`, `MName`, `LName`, `Surname`, `ContactNo`, `Email`, `ProgramType`, `Course`, `Date_Start`, `Final_Deadline`, `Note`) VALUES
 (1, 'Hiba', 'A.', 'Dawood', 'Ithawi', 770000000, 'Hi@gmail.com', 'MSC', 'Computer Science', '2022-12-11', '2025-05-11', 'Trial data ');
 
 -- --------------------------------------------------------

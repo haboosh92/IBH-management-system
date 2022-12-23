@@ -9,13 +9,13 @@ if(!isset($_SESSION['ACCOUNT_ID'])){
         <table class="table">
             <tr>
                 <td><label>First name</label></td>
-                <td><input id="FName" required="true" class="form-control input-md" type="text" placeholder="first name"> </td>
+                <td><input id="FName" name="FName" required="true" class="form-control input-md" type="text" placeholder="first name"> </td>
                 <td><label>Middle name</label></td>
-                <td><input id="MName" required="true" class="form-control input-md" type="text" placeholder="middle name"> </td>
+                <td><input id="MName" name="MName" required="true" class="form-control input-md" type="text" placeholder="middle name"> </td>
                 <td><label>Last name</label></td>
-                <td><input id="LName" required="true" class="form-control input-md" type="text" placeholder="last name"> </td>
+                <td><input id="LName" name="LName" required="true" class="form-control input-md" type="text" placeholder="last name"> </td>
                 <td><label>Surname</label></td>
-                <td><input id="Surname" required="true" class="form-control input-md" type="text" placeholder="surname"> </td>
+                <td><input id="Surname" name="Surname" required="true" class="form-control input-md" type="text" placeholder="surname"> </td>
             </tr>
             <tr>
                 <td><label>Contact No. </label></td>
@@ -30,7 +30,7 @@ if(!isset($_SESSION['ACCOUNT_ID'])){
                 <td colspan="3">
                     <div class="input-group" >
                         <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                        <input class="form-control input-md" name="DateStart"  id="DateStart"  type="date"  placeholder="mm/dd/yyyy"  data-inputmask="'alias': 'mm/dd/yyyy'" data-mask value="<?php echo isset($_POST['Date_Start']) ? $_POST['Date_Start'] : ''; ?>">
+                        <input class="form-control input-md" name="Date_Start"  id="Date_Start"  type="date"  placeholder="mm/dd/yyyy"  data-inputmask="'alias': 'mm/dd/yyyy'" data-mask value="<?php echo isset($_POST['Date_Start']) ? $_POST['Date_Start'] : ''; ?>">
                     </div>  
                 </td>
             </tr>
@@ -39,7 +39,7 @@ if(!isset($_SESSION['ACCOUNT_ID'])){
                 <td colspan="3">
                     <div class="input-group" >
                         <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                        <input class="form-control input-md" name="FinalDeadline"  id="FinalDeadline"  type="date"  placeholder="mm/dd/yyyy"  data-inputmask="'alias': 'mm/dd/yyyy'" data-mask value="<?php echo isset($_POST['Final_Deadline']) ? $_POST['Final_Deadline'] : ''; ?>">
+                        <input class="form-control input-md" name="Final_Deadline"  id="Final_Deadline"  type="date"  placeholder="mm/dd/yyyy"  data-inputmask="'alias': 'mm/dd/yyyy'" data-mask value="<?php echo isset($_POST['Final_Deadline']) ? $_POST['Final_Deadline'] : ''; ?>">
                     </div>  
                 </td>
             </tr>
@@ -49,7 +49,7 @@ if(!isset($_SESSION['ACCOUNT_ID'])){
                     <select class="form-control input-sm" name="ProgramType">
                         <option value = "<?php echo isset($_POST['ProgramType']) ? $_POST['ProgramType'] : 'Select'?>">Select</option>
                         <option value = "MSC" >MSC</option>
-                        <option value = "PHD">PHD</option>
+                        <option value = "PHD" >PHD</option>
                     </select>
             </tr>
             <tr>
@@ -66,7 +66,7 @@ if(!isset($_SESSION['ACCOUNT_ID'])){
             </tr>
             <tr>
                 <td><label>Notes</label></td>
-                <td colspan="3"><input class="form-control input-md" id="note" placeholder="Any further important information" type="text"></td>
+                <td colspan="3"><input class="form-control input-md" id="Note" name="Note" placeholder="Any further important information" type="text"></td>
             </tr>
             <tr>
                 <td colspan="5">  

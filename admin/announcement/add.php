@@ -1,12 +1,10 @@
-                      <?php 
-                    if(!isset($_SESSION['ACCOUNT_ID'])){
+<?php 
+  if(!isset($_SESSION['ACCOUNT_ID'])){
   redirect(web_root."admin/index.php");
 }
-
                       // $autonum = New Autonumber();
                       // $res = $autonum->single_autonumber(2);
-
-                       ?> 
+?> 
   <style type="text/css">
   .row {
     margin-bottom: 10px;

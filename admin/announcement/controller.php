@@ -34,11 +34,10 @@ switch ($action) {
 			$id = $autonum->set_autonumber("BLOGID");
 			$BLOGID = date("Y").$id->AUTO;
 
-			$ANNOUNCEMENT_TEXT = $_POST['ANNOUNCEMENT_TEXT'];
-			$ANNOUNCEMENT_WHAT = $_POST['ANNOUNCEMENT_WHAT'];  
-
-			$ANNOUNCEMENT_WHEN = ""; 
-			$ANNOUNCEMENT_WHERE = "";
+			$ANNOUNCEMENT_TEXT	= $_POST['ANNOUNCEMENT_TEXT'];
+			$ANNOUNCEMENT_WHAT	= $_POST['ANNOUNCEMENT_WHAT'];  
+			$ANNOUNCEMENT_WHEN	= ""; 
+			$ANNOUNCEMENT_WHERE	= "";
 
 		if ($_POST['ANNOUNCEMENT_TEXT'] == "" OR $_POST['ANNOUNCEMENT_WHAT'] == "" ){
 			$messageStats = false;
@@ -52,25 +51,7 @@ switch ($action) {
 			$annoucement->ANNOUNCEMENT_WHAT = $ANNOUNCEMENT_WHAT;  
 			$annoucement->DATEPOSTED 		= date("Y-m-d H:i:s");
 			$annoucement->AUTHOR 			= $_SESSION['ACCOUNT_NAME'];
-			$annoucement->create();  
-
-			// $sql ="INSERT INTO `tblblogpost` (`BLOGID`,`BLOGS`, `BLOG_WHAT`, `BLOG_WHEN`, `BLOG_WHERE`, `DATEPOSTED`, `CATEGORY`,`AUTHOR`) 
-			// VALUES('{$BLOGID}','{$ANNOUNCEMENT_TEXT}','{$ANNOUNCEMENT_WHAT}','{$ANNOUNCEMENT_WHEN}','{$ANNOUNCEMENT_WHERE}',NOW(),'ANNOUNCEMENT','".$_SESSION['NAME']."')";
-			// $mydb->setQuery($sql);
-			// $mydb->executeQuery();
-
-
-			// $sql = "SELECT * FROM tblstudent";
-			// $mydb->setQuery($sql);
-			// $cur = $mydb->loadResultList();
-			// foreach ($cur as $result) {
-			// 	# code...
-			// 	$sql = "INSERT INTO `tblnotifblogs` (`BlogID`, `IDNO`) VALUES ('{$BLOGID}','".$result->IDNO."')";
-			// 	$mydb->setQuery($sql);
-			// 	$mydb->executeQuery();
-			// }
-
-			
+			$annoucement->create();  			
 
 			$autonum = New Autonumber(); 
 			$autonum->auto_update("BLOGID");
@@ -88,11 +69,11 @@ switch ($action) {
 		global $mydb; 
 
 	if(isset($_POST['save'])){  
-			$BLOGID =$_POST['ANNOUNCEMENTID'];
-			$ANNOUNCEMENT_TEXT = $_POST['ANNOUNCEMENT_TEXT'];
-			$ANNOUNCEMENT_WHAT = $_POST['ANNOUNCEMENT_WHAT'];  
-			$ANNOUNCEMENT_WHEN = ""; 
-			$ANNOUNCEMENT_WHERE = "";
+			$BLOGID 			=	$_POST['ANNOUNCEMENTID'];
+			$ANNOUNCEMENT_TEXT	=	$_POST['ANNOUNCEMENT_TEXT'];
+			$ANNOUNCEMENT_WHAT	=	$_POST['ANNOUNCEMENT_WHAT'];  
+			$ANNOUNCEMENT_WHEN	=	""; 		// remember to add the fields related to date 
+			$ANNOUNCEMENT_WHERE =	"";			// in the list and in the database table name
 
 
 			if ($_POST['ANNOUNCEMENT_TEXT'] == "" OR $_POST['ANNOUNCEMENT_WHAT'] == ""){

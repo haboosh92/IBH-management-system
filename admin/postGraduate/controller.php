@@ -22,40 +22,50 @@ switch($action) {
 function doInsert(){
     global $mydb;
     if(isset($_POST['submit'])){
-        if($_POST['FName'] == "" || $_POST['MName'] == "" || $_POST['LName'] == "" || $_POST['Surname'] == "" ||
-         $_POST['ContactNo'] == "" || $_POST['Email'] == "" || $_POST['Course'] == "" || $_POST['Date_Start'] == "" || $_POST['Date_Deadline'] ){
-            $messageStats = false;
-            message("full required fields please! ");
-            redirect('index.php?view=add');
-        }
-        else{
+                $studAuto = New Autonumber();
+                $Id = $studAuto->set_autonumber("Id");
+
+        $FName           =       $_POST['FName'];       //array keys should match the names in the add files not the id's 
+        $MName           =       $_POST['MName'];
+        $LName           =       $_POST['LName'];
+        $Surname         =       $_POST['Surname'];
+        $ContactNo       =       $_POST['ContactNo'];
+        $Email           =       $_POST['Email'];
+        $ProgramType     =       $_POST['ProgramType'];
+        $Course          =       $_POST['Course'];
+        $Note            =       $_POST['Note'];
+        $Date_Start       =       date_format(date_create($_POST['Date_Start']),'Y-m-d');
+        $Final_Deadline   =       date_format(date_create($_POST['Final_Deadline']),'Y-m-d');
+
+        // if($_POST['FName'] == "" || $_POST['MName'] == "" || $_POST['LName'] == "" || $_POST['Surname'] == "" ||
+        //  $_POST['ContactNo'] == "" || $_POST['Email'] == "" || $_POST['Course'] == "" || $_POST['Date_Start'] == "" || $_POST['Date_Deadline'] ){
+        //     $messageStats = false;
+        //     message("full required fields please! ");
+        //     redirect('index.php?view=add');
+        // }
+        //else{
            $pstStudent                  =       new postGraduateStd();
-           $res = $pstStudent->single_student($_POST['Id']);
-							if ($res) {
-								# code...
-								message("Id number is already exist.","error");
-								redirect("index.php?view=add");
-							}
-           $pstStudent->FName           =       $_POST['FName'];
-           $pstStudent->MName           =       $_POST['MName'];
-           $pstStudent->LName           =       $_POST['LName'];
-           $pstStudent->Surname         =       $_POST['Surname'];
-           $pstStudent->ContactNo       =       $_POST['ContactNo'];
-           $pstStudent->Email           =       $_POST['Email'];
-           $pstStudent->ProgramType     =       $_POST['ProgramType'];
-           $pstStudent->Course          =       $_POST['Course'];
-           $pstStudent->Note            =       $_POST['Note'];
-           $pstStudent->DateStart       =       date_format(date_create($_POST['DateStart']),'Y-m-d');
-           $pstStudent->FinalDeadline   =       date_format(date_create($_POST['FinalDeadline']),'Y-m-d');
+           $pstStudent->FName           =       $FName;
+           $pstStudent->MName           =       $MName;
+           $pstStudent->LName           =       $LName;
+           $pstStudent->Surname         =       $Surname;
+           $pstStudent->ContactNo       =       $ContactNo;
+           $pstStudent->Email           =       $Email;
+           $pstStudent->ProgramType     =       $ProgramType;
+           $pstStudent->Course          =       $Course;
+           $pstStudent->Note            =       $Note;
+           $pstStudent->Date_Start      =       $Date_Start;
+           $pstStudent->Final_Deadline  =       $Final_Deadline ;
            $pstStudent->create();
 
-           $studAuto = New Autonumber();
-           $studAuto->studauto_update();
 
+           $studAuto = New Autonumber(); 
+           $studAuto->auto_update("Id");
+          // $studAuto->auto_update($Id); // not sure which one is true
             message("New student created successfully!", "success");
            redirect("index.php");
          }
      }
- }
+// }
 
 ?> 

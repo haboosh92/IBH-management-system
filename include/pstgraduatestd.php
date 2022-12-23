@@ -1,7 +1,7 @@
 <?php
 require_once(LIB_PATH.DS.'database.php');
 class postGraduateStd {
-	protected static  $tblname = "pst-graduate-std";
+	protected static  $tblname = "pstgraduatestd";
 
 	function dbfields () {
 		global $mydb;
@@ -15,7 +15,7 @@ class postGraduateStd {
 	function find_student($id="",$name=""){
 		global $mydb;
 		$mydb->setQuery("SELECT * FROM ".self::$tblname." 
-			WHERE IDNO = {$id} OR LNAME = '{$name}'"); 
+			WHERE IDNO = {$id} OR LNAME = '{$name}'");  // haboosh remeber try to test the following " WHERE Id = {$Id} OR FName = '{$FName}' "
 		$row_count = $mydb->num_rows();
 		return $row_count;
 	}
@@ -31,7 +31,7 @@ class postGraduateStd {
 	function single_student($id=""){
 			global $mydb;
 			$mydb->setQuery("SELECT * FROM ".self::$tblname." 
-				Where IDNO= '{$id}' LIMIT 1");
+				Where Id= '{$id}' LIMIT 1");
 			$cur = $mydb->loadSingleResult();
 			return $cur;
 	}
@@ -118,7 +118,7 @@ class postGraduateStd {
 		}
 		$sql = "UPDATE ".self::$tblname." SET ";
 		$sql .= join(", ", $attribute_pairs);
-		$sql .= " WHERE IDNO='{$id}'";
+		$sql .= " WHERE Id='{$id}'";
 	 
 	 	if(!$mydb->InsertThis($sql)) return false; 	
 		
@@ -127,7 +127,7 @@ class postGraduateStd {
 	public function delete($id='') {
 		global $mydb;
 		  $sql = "DELETE FROM ".self::$tblname;
-		  $sql .= " WHERE  IDNO='{$id}'";
+		  $sql .= " WHERE  Id='{$id}'";
 		  $sql .= " LIMIT 1 ";
 		 
 		  

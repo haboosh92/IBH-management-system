@@ -32,7 +32,7 @@ require_once(LIB_PATH.DS."inbox.php");
 require_once(LIB_PATH.DS."outbox.php");
 require_once(LIB_PATH.DS."announcements.php");
 require_once(LIB_PATH.DS."database.php");
-require_once(LIB_PATH.DS."post-graduate-std.php");
+require_once(LIB_PATH.DS."pstgraduatestd.php");
 ?>
 
 
