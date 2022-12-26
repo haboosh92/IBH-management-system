@@ -25,7 +25,7 @@
        </div> 
 
 
-                         <div class="row">
+                <div class="row">
                     <div class="col-md-11">
                        <label class="col-md-2 control-label" for=
                       "ANNOUNCEMENT_TEXT">Title:</label>
