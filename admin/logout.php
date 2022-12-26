@@ -10,19 +10,19 @@ require_once '../include/initialize.php';
           VALUES (".$_SESSION['ACCOUNT_ID'].",'".date('Y-m-d H:i:s')."','".$_SESSION['ACCOUNT_TYPE']."','Logged out')";
           $mydb->InsertThis($sql) ; 
 
-         if ($_SESSION['ACCOUNT_TYPE']=='Officer') { 
-		    unset($_SESSION['IDNO']);   		 
-		 	unset($_SESSION['ACC_USERNAME']); 	 
-		 	unset($_SESSION['ACC_PASSWORD']); 	 
-			unset($_SESSION['FNAME']);			 
-			unset($_SESSION['LNAME']);			 
-			unset($_SESSION['MI']);				 
-			unset($_SESSION['PADDRESS']);	 
-			unset($_SESSION['COURSEID']);		 
-			unset($_SESSION['CONTACT']);		 
-			unset($_SESSION['COURSELEVEL']);	 
-			unset($_SESSION['ACCOUNTTYPE']);	 
-          }
+        //  if ($_SESSION['ACCOUNT_TYPE']=='Officer') { 
+		//     unset($_SESSION['IDNO']);   		 
+		//  	unset($_SESSION['ACC_USERNAME']); 	 
+		//  	unset($_SESSION['ACC_PASSWORD']); 	 
+		// 	unset($_SESSION['FNAME']);			 
+		// 	unset($_SESSION['LNAME']);			 
+		// 	unset($_SESSION['MI']);				 
+		// 	unset($_SESSION['PADDRESS']);	 
+		// 	unset($_SESSION['COURSEID']);		 
+		// 	unset($_SESSION['CONTACT']);		 
+		// 	unset($_SESSION['COURSELEVEL']);	 
+		// 	unset($_SESSION['ACCOUNTTYPE']);	 
+        //   }
 
 // 2. Unset all the session variables
 unset($_SESSION['ACCOUNT_ID']);

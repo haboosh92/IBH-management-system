@@ -33,14 +33,13 @@
 <div class="col-md-4">
 	<div class="panel panel-green">
 		<div class="panel-heading" >
-			الطلاب
+			Undergraduate students
 		</div>
 		<div class="panel-body" style="color:green">
 			<?php 
 				$sql ="SELECT * FROM `tblstudent`";
 				$cur =  $mydb->setQuery($sql); 
 				$allstudent = $mydb->num_rows($cur);
-
 				echo $allstudent;
 			?>
 		</div>
@@ -50,62 +49,45 @@
 <div class="col-md-4">
 	<div class="panel panel-red">
 		<div class="panel-heading">
-			الموارد البشرية
+			HR Inbox
 		</div>
 		<div class="panel-body" style="color:red">
 		   <?php 
-				$sql ="SELECT * FROM `tblstudent` WHERE ACCOUNTTYPE='Officer'";
-					$cur = $mydb->setQuery($sql); 
-				$allofficer = $mydb->num_rows($cur);
-
-				echo $allofficer;
+				// $sql ="SELECT * FROM `tblstudent` WHERE ACCOUNTTYPE='Officer'";
+				// $cur = $mydb->setQuery($sql); 
+				// $allofficer = $mydb->num_rows($cur);
+				// echo $allofficer;
 			?>
 		</div>
 	</div>
 </div>
-<div class="col-md-4">
-	<div class="panel panel-yellow">
-		<div class="panel-heading">
-			المستخدمين
-		</div>
-		<div class="panel-body" style="color:#ffcc66">
-			<?php 
-				$sql ="SELECT * FROM `useraccounts`";
-					$cur = $mydb->setQuery($sql); 
-				$alluser = $mydb->num_rows($cur);
-
-				echo $alluser;
-			?>
-		</div>
-	</div>
-</div>  
+  
 <div class="col-md-4">
 	<div class="panel panel-info">
 		<div class="panel-heading">
-			الارشيف
+			HR Outbox
 		</div>
 		<div class="panel-body" style="color:#663399">
 		   <?php 
-				$sql ="SELECT * FROM `tblstudent` WHERE ACCOUNTTYPE='Officer'";
-					$cur = $mydb->setQuery($sql); 
-				$allofficer = $mydb->num_rows($cur);
-
-				echo $allofficer;
+				// $sql ="SELECT * FROM `tblstudent` WHERE ACCOUNTTYPE=''";
+				// 	$cur = $mydb->setQuery($sql); 
+				// $allofficer = $mydb->num_rows($cur);
+				// echo $allofficer;
 			?>
 		</div>
 	</div>
 </div>
+
 <div class="col-md-4">
 	<div class="panel panel-primary">
 		<div class="panel-heading">
-			التقويم 
+			Calendar 
 		</div>
 		<div class="panel-body" style="color:#007bff">
 		   <?php 
-			/*	$sql ="SELECT * FROM `tblstudent` WHERE ACCOUNTTYPE='Officer'";
+			/*	$sql ="SELECT * FROM `tblstudent`";
 					$cur = $mydb->setQuery($sql); 
-				$allofficer = $mydb->num_rows($cur);
-*/
+				$allofficer = $mydb->num_rows($cur);	*/
 				echo "Upcoming events";
 			?>
 		</div>
@@ -114,22 +96,31 @@
 <div class="col-md-4">
 	<div class="panel panel-danger">
 		<div class="panel-heading">
-			 النشاطات 
+			 Post Graduate students
 		</div>
 		<div class="panel-body"  style="color:#66CDAA">
 			<?php 
 
-			// $sql = "SELECT * FROM `course`";
-			// $mydb->setQuery($sql);
-			// $cur  = $mydb->loadResultList();
+			 $sql = "SELECT * FROM `pstgraduatestd`";
+			 $cur = $mydb->setQuery($sql); 
+			 $allpstgrdstd = $mydb->num_rows($cur);
+			 echo $allpstgrdstd;
 
-			// foreach ($cur as $result) {
-				# code...
-				 
-
-					echo "This is just for future work".'<br>';
-			// }
-
+			?>
+		</div>
+	</div>
+</div>
+<div class="col-md-4">
+	<div class="panel panel-yellow">
+		<div class="panel-heading">
+			Users 
+		</div>
+		<div class="panel-body" style="color:#ffcc66">
+			<?php 
+				$sql ="SELECT * FROM `useraccounts`";
+				$cur = $mydb->setQuery($sql); 
+				$alluser = $mydb->num_rows($cur);
+				echo $alluser;
 			?>
 		</div>
 	</div>

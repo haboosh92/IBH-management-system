@@ -7,10 +7,10 @@ require_once("../include/initialize.php");
 $content='home.php';
 $view = (isset($_GET['view']) && $_GET['view'] != '') ? $_GET['view'] : '';
 switch ($view) {
-	case 'grades' :
-        $title="Home page";	
-		$content = 'studentgrades.php';		
-		break;	
+	// case 'grades' :
+    //     $title="Home page";	
+	// 	$content = 'studentgrades.php';		
+	// 	break;	
 	default :
 	  $title="Home";	
 	    if ($_SESSION['ACCOUNT_TYPE'] =='Administrator') {
@@ -42,5 +42,6 @@ switch ($view) {
 	    }
 			
 }
+
 require_once("theme/templates.php");
 ?>

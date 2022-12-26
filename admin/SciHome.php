@@ -29,7 +29,11 @@
 		<div class="panel-body" style="color:red">
 		   <?php 
                 # code...
-				echo " " ."<br>";	
+				$sql = "SELECT * FROM `pstgraduatestd`";
+				$cur = $mydb->setQuery($sql); 
+				$allpstgrdstd = $mydb->num_rows($cur);
+				echo $allpstgrdstd;
+					
 			?>
 		</div>
 	</div>
