@@ -36,6 +36,7 @@ function doInsert(){
         $Note            =       $_POST['Note'];
         $Date_Start       =       date_format(date_create($_POST['Date_Start']),'Y-m-d');
         $Final_Deadline   =       date_format(date_create($_POST['Final_Deadline']),'Y-m-d');
+        $Author           =       $_SESSION['ACCOUNT_NAME'];
 
         // if($_POST['FName'] == "" || $_POST['MName'] == "" || $_POST['LName'] == "" || $_POST['Surname'] == "" ||
         //  $_POST['ContactNo'] == "" || $_POST['Email'] == "" || $_POST['Course'] == "" || $_POST['Date_Start'] == "" || $_POST['Date_Deadline'] ){
@@ -56,6 +57,7 @@ function doInsert(){
            $pstStudent->Note            =       $Note;
            $pstStudent->Date_Start      =       $Date_Start;
            $pstStudent->Final_Deadline  =       $Final_Deadline ;
+           $pstStudent->Author 			=       $Author;
            $pstStudent->create();
 
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2022 at 07:45 AM
+-- Generation Time: Dec 26, 2022 at 08:33 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -65,12 +65,44 @@ CREATE TABLE `pst-graduate-std` (
   `Note` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `pst-graduate-std`
+-- Table structure for table `pstgraduatestd`
 --
 
-INSERT INTO `pstgraduatestd` (`Id`, `FName`, `MName`, `LName`, `Surname`, `ContactNo`, `Email`, `ProgramType`, `Course`, `Date_Start`, `Final_Deadline`, `Note`) VALUES
-(1, 'Hiba', 'A.', 'Dawood', 'Ithawi', 770000000, 'Hi@gmail.com', 'MSC', 'Computer Science', '2022-12-11', '2025-05-11', 'Trial data ');
+CREATE TABLE `pstgraduatestd` (
+  `Id` int(10) UNSIGNED NOT NULL,
+  `FName` varchar(32) NOT NULL,
+  `MName` varchar(32) NOT NULL,
+  `LName` varchar(32) NOT NULL,
+  `Surname` varchar(32) NOT NULL,
+  `ContactNo` int(32) NOT NULL,
+  `Email` varchar(64) NOT NULL,
+  `ProgramType` varchar(32) NOT NULL,
+  `Course` varchar(32) NOT NULL,
+  `Date_Start` date DEFAULT current_timestamp(),
+  `Final_Deadline` date DEFAULT current_timestamp(),
+  `Note` varchar(200) NOT NULL,
+  `Author` varchar(90) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pstgraduatestd`
+--
+
+INSERT INTO `pstgraduatestd` (`Id`, `FName`, `MName`, `LName`, `Surname`, `ContactNo`, `Email`, `ProgramType`, `Course`, `Date_Start`, `Final_Deadline`, `Note`, `Author`) VALUES
+(1, 'Hiba', 'A.', 'Dawood', 'Ithawi', 770000000, 'Hi@gmail.com', 'MSC', 'Computer Science', '2022-12-11', '2025-05-11', 'Trial data ', NULL),
+(2, 'Douaa', 'A.', 'Dawood', 'Ithawi', 2147483647, 'do@gmail.com', 'MSC', 'Biology', '2012-12-12', '2020-12-12', 'trial data', NULL),
+(3, 'Ammar', 'A.', 'Dawood', 'Ithawi', 2147483647, 'am@gmail.com', 'MSC', 'Biology', '2022-12-23', '2022-12-23', 'trial data', NULL),
+(4, 'Moheeb', 'T.', '??', '??', 2147483647, 'mo@gmail.com', 'MSC', 'Physics', '2022-12-23', '2022-12-23', 'trial data', NULL),
+(6, 'scientific affairs', 'A.', 'M', 'M', 2147483647, 'sc@gmail.com', 'PHD', 'Math', '2012-12-12', '2014-12-12', 'trial data', NULL),
+(7, 'Hussien', 'L.', 'L.', '????', 2147483647, 'Hu@gmail.com', 'PHD', 'Physics', '1010-01-01', '1010-01-01', 'trial data', 'Dean'),
+(9, 'check contact problem', 'A.', '??', '??', 77, '??@gmail.com', 'PHD', 'Math', '1955-05-05', '1955-05-06', 'trial data', NULL),
+(10, 'o', 'o', 'o', 'o', 2147483647, 'oooo@gmail.com', 'MSC', 'Math', '2022-12-26', '2022-12-26', '', NULL),
+(11, 'Author edit', '??', '??', '??', 770000, 'A@gmail.com', 'Select', 'Select', '2022-12-26', '2022-12-26', '', NULL),
+(12, 'error', 'A.', 'L.', '??', 77000000, 'UOB13092', 'PHD', 'Chemistry', '2021-08-21', '2021-08-21', 'trial data', NULL),
+(13, 'error 2', '??', '??', '??', 2147483647, 'A@gmail.com', 'MSC', 'Chemistry', '2003-06-21', '2021-08-19', 'trial data', 'Dean');
 
 -- --------------------------------------------------------
 
@@ -120,8 +152,7 @@ CREATE TABLE `tblannouncement` (
 INSERT INTO `tblannouncement` (`ANNOUNCEMENTID`, `ANNOUNCEMENT_TEXT`, `ANNOUNCEMENT_WHAT`, `DATEPOSTED`, `AUTHOR`) VALUES
 (2019009, 'hi', '<p>hi</p>', '2019-11-28 11:43:45', 'admin'),
 (20220010, 'helloooooo', '<p>helllllllo woooooooooorld</p>', '2022-07-25 02:33:57', 'admin'),
-(20220013, 'mmm', '<p><b>hhh</b></p>', '2022-12-12 08:11:42', 'admin'),
-(20220014, 'mmm', '<blockquote><p><i><u>kgghyufvytf</u></i></p></blockquote>', '2022-12-14 07:25:49', 'admin');
+(20220013, 'mmm', '<p><b>hhh</b></p>', '2022-12-12 08:11:42', 'admin');
 
 -- --------------------------------------------------------
 
@@ -138,42 +169,6 @@ CREATE TABLE `tblauto` (
   `autoend` int(11) NOT NULL,
   `incrementvalue` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tblexpenses`
---
-
-CREATE TABLE `tblexpenses` (
-  `EXPENSEID` int(11) NOT NULL,
-  `AMOUNT` double NOT NULL,
-  `DESCRIPTION` varchar(90) NOT NULL,
-  `COURSE_ID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tblexpenses`
---
-
-INSERT INTO `tblexpenses` (`EXPENSEID`, `AMOUNT`, `DESCRIPTION`, `COURSE_ID`) VALUES
-(6, 400, 'nothing', 2);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tblfees`
---
-
-CREATE TABLE `tblfees` (
-  `FEEID` int(11) NOT NULL,
-  `EXPENSEID` int(11) NOT NULL,
-  `IDNO` varchar(90) NOT NULL,
-  `PAYMENT` double NOT NULL,
-  `REMARKS` text NOT NULL,
-  `USERNAME` varchar(90) NOT NULL,
-  `TRANSDATE` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -509,7 +504,79 @@ INSERT INTO `tbllogs` (`LOGID`, `USERID`, `LOGDATETIME`, `LOGROLE`, `LOGMODE`) V
 (291, 15, '2022-12-19 21:07:21', 'HR', 'Logged out'),
 (292, 30, '2022-12-19 21:07:23', 'Biology dep', 'Logged in'),
 (293, 30, '2022-12-19 21:07:28', 'Biology dep', 'Logged out'),
-(294, 22, '2022-12-19 21:07:31', 'Administrator', 'Logged in');
+(294, 22, '2022-12-19 21:07:31', 'Administrator', 'Logged in'),
+(295, 22, '2022-12-20 07:49:43', 'Administrator', 'Logged out'),
+(296, 27, '2022-12-20 07:49:49', 'Computer dep', 'Logged in'),
+(297, 27, '2022-12-20 07:50:30', 'Computer dep', 'Logged out'),
+(298, 23, '2022-12-20 07:50:39', 'Student affairs', 'Logged in'),
+(299, 23, '2022-12-20 07:56:59', 'Student affairs', 'Logged out'),
+(300, 30, '2022-12-20 07:57:01', 'Biology dep', 'Logged in'),
+(301, 30, '2022-12-20 07:57:06', 'Biology dep', 'Logged out'),
+(302, 22, '2022-12-20 07:57:10', 'Administrator', 'Logged in'),
+(303, 22, '2022-12-20 09:02:22', 'Administrator', 'Logged out'),
+(304, 22, '2022-12-20 09:08:33', 'Administrator', 'Logged in'),
+(305, 22, '2022-12-20 09:13:56', 'Administrator', 'Logged out'),
+(306, 22, '2022-12-20 09:14:55', 'Administrator', 'Logged in'),
+(307, 22, '2022-12-20 10:45:56', 'Administrator', 'Logged out'),
+(308, 30, '2022-12-20 10:45:59', 'Biology dep', 'Logged in'),
+(309, 30, '2022-12-20 10:46:02', 'Biology dep', 'Logged out'),
+(310, 21, '2022-12-20 10:46:09', 'Scientific affairs', 'Logged in'),
+(311, 21, '2022-12-20 10:46:43', 'Scientific affairs', 'Logged out'),
+(312, 22, '2022-12-20 10:46:47', 'Administrator', 'Logged in'),
+(313, 22, '2022-12-20 19:04:09', 'Administrator', 'Logged out'),
+(314, 30, '2022-12-20 19:04:11', 'Biology dep', 'Logged in'),
+(315, 30, '2022-12-20 19:05:16', 'Biology dep', 'Logged out'),
+(316, 1, '2022-12-20 19:05:22', 'Administrator', 'Logged in'),
+(317, 1, '2022-12-20 20:15:59', 'Administrator', 'Logged out'),
+(318, 30, '2022-12-20 20:16:00', 'Biology dep', 'Logged in'),
+(319, 30, '2022-12-20 20:16:06', 'Biology dep', 'Logged out'),
+(320, 15, '2022-12-20 20:16:11', 'HR', 'Logged in'),
+(321, 15, '2022-12-20 20:16:16', 'HR', 'Logged out'),
+(322, 30, '2022-12-20 20:16:18', 'Biology dep', 'Logged in'),
+(323, 30, '2022-12-20 20:16:20', 'Biology dep', 'Logged out'),
+(324, 22, '2022-12-20 20:16:26', 'Administrator', 'Logged in'),
+(325, 22, '2022-12-26 07:00:31', 'Administrator', 'Logged out'),
+(326, 21, '2022-12-26 07:00:43', 'Scientific affairs', 'Logged in'),
+(327, 21, '2022-12-26 07:01:19', 'Scientific affairs', 'Logged out'),
+(328, 22, '2022-12-26 07:01:23', 'Administrator', 'Logged in'),
+(329, 22, '2022-12-26 07:05:00', 'Administrator', 'Logged out'),
+(330, 21, '2022-12-26 07:05:47', 'Scientific affairs', 'Logged in'),
+(331, 21, '2022-12-26 07:26:30', 'Scientific affairs', 'Logged out'),
+(332, 22, '2022-12-26 07:26:58', 'Administrator', 'Logged in'),
+(333, 22, '2022-12-26 10:40:39', 'Administrator', 'Logged out'),
+(334, 21, '2022-12-26 10:40:49', 'Scientific affairs', 'Logged in'),
+(335, 21, '2022-12-26 10:52:14', 'Scientific affairs', 'Logged out'),
+(336, 22, '2022-12-26 10:52:19', 'Administrator', 'Logged in'),
+(337, 22, '2022-12-26 10:52:26', 'Administrator', 'Logged out'),
+(338, 23, '2022-12-26 10:52:38', 'Student affairs', 'Logged in'),
+(339, 23, '2022-12-26 10:54:59', 'Student affairs', 'Logged out'),
+(340, 30, '2022-12-26 10:55:34', 'Biology dep', 'Logged in'),
+(341, 30, '2022-12-26 10:55:40', 'Biology dep', 'Logged out'),
+(342, 30, '2022-12-26 10:58:04', 'Biology dep', 'Logged in'),
+(343, 30, '2022-12-26 10:58:23', 'Biology dep', 'Logged out'),
+(344, 21, '2022-12-26 10:58:33', 'Scientific affairs', 'Logged in'),
+(345, 21, '2022-12-26 10:58:51', 'Scientific affairs', 'Logged out'),
+(346, 1, '2022-12-26 10:59:25', 'Administrator', 'Logged in'),
+(347, 1, '2022-12-26 11:01:41', 'Administrator', 'Logged out'),
+(348, 30, '2022-12-26 11:01:44', 'Biology dep', 'Logged in'),
+(349, 30, '2022-12-26 11:04:03', 'Biology dep', 'Logged out'),
+(350, 22, '2022-12-26 11:04:07', 'Administrator', 'Logged in'),
+(351, 22, '2022-12-26 19:32:05', 'Administrator', 'Logged out'),
+(352, 30, '2022-12-26 19:32:07', 'Biology dep', 'Logged in'),
+(353, 30, '2022-12-26 19:32:19', 'Biology dep', 'Logged out'),
+(354, 26, '2022-12-26 19:32:22', 'Chemistry dep', 'Logged in'),
+(355, 26, '2022-12-26 19:32:30', 'Chemistry dep', 'Logged out'),
+(356, 15, '2022-12-26 19:32:36', 'HR', 'Logged in'),
+(357, 15, '2022-12-26 19:33:25', 'HR', 'Logged out'),
+(358, 27, '2022-12-26 19:33:29', 'Computer dep', 'Logged in'),
+(359, 27, '2022-12-26 19:33:42', 'Computer dep', 'Logged out'),
+(360, 28, '2022-12-26 19:33:51', 'Mathematics dep', 'Logged in'),
+(361, 28, '2022-12-26 19:35:02', 'Mathematics dep', 'Logged out'),
+(362, 29, '2022-12-26 19:35:32', 'Physics dep', 'Logged in'),
+(363, 29, '2022-12-26 19:36:03', 'Physics dep', 'Logged out'),
+(364, 21, '2022-12-26 19:36:13', 'Scientific affairs', 'Logged in'),
+(365, 21, '2022-12-26 19:36:19', 'Scientific affairs', 'Logged out'),
+(366, 22, '2022-12-26 19:37:41', 'Administrator', 'Logged in');
 
 -- --------------------------------------------------------
 
@@ -590,16 +657,16 @@ CREATE TABLE `useraccounts` (
 
 INSERT INTO `useraccounts` (`ACCOUNT_ID`, `ACCOUNT_NAME`, `ACCOUNT_USERNAME`, `ACCOUNT_PASSWORD`, `ACCOUNT_TYPE`, `EMPID`, `POSITION`, `USERIMAGE`) VALUES
 (1, 'admin', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Administrator', '1234', '', 'photos/login.png'),
-(15, 'HR1', 'HR1', 'a36aa7077a741713a61cf465988d107ab205042f', 'HR', '', '', ''),
+(15, 'HR1', 'HR1', 'a36aa7077a741713a61cf465988d107ab205042f', 'HR', '', '', 'photos/login.png'),
 (18, 'officer', 'officer', 'f90409b98ffb61424a01b4bb718aa602cebd5ee2', 'Officer', '2018-SC-0001', 'Vice-President', ''),
-(21, 'scientific affairs ', 'Scientific affairs', '707c2130541bb2d33b0bf5138216cc7bafcb84ab', 'Scientific affairs', '5678', 'Dean assistant', ''),
+(21, 'scientific affairs ', 'Scientific affairs', '707c2130541bb2d33b0bf5138216cc7bafcb84ab', 'Scientific affairs', '5678', 'Dean assistant', 'photos/login.png'),
 (22, 'Dean', 'Dean', '0e21b200d4510338e7a9f9c7555b324bf596e7a2', 'Administrator', '', '', 'photos/login.png'),
-(23, 'drKamal', 'drKamal', 'afa02725c67f1defcb34ce4212e4125df284329e', 'Student affairs', '', '', ''),
+(23, 'drKamal', 'drKamal', 'afa02725c67f1defcb34ce4212e4125df284329e', 'Student affairs', '', '', 'photos/login.png'),
 (26, 'Chemistry dep', 'Chemistry dep', '7336edcf3ea1c50c0811827b877bff24a1dd8ca6', 'Chemistry dep', '', '', 'photos/login.png'),
-(27, 'Computer dep', 'Computer dep', '746281b0ec4a1cde4e43d4f1f96a2c77f1b283a1', 'Computer dep', '', '', ''),
-(28, 'Mathematics dep', 'Mathematics dep', '31b5ffcec1221405aa6f7a0b6cf29a485358418e', 'Mathematics dep', '', '', ''),
-(29, 'Physics dep', 'Physics dep', '01146150202aa49130b9a4d5728687bdf38e9f7b', 'Physics dep', '', '', ''),
-(30, 'Biology dep', 'Biology dep', '623c5970c55f473c8075f39d3eeb0890b35cb514', 'Biology dep', '', '', '');
+(27, 'Computer dep', 'Computer dep', '746281b0ec4a1cde4e43d4f1f96a2c77f1b283a1', 'Computer dep', '', '', 'photos/login.png'),
+(28, 'Mathematics dep', 'Mathematics dep', '31b5ffcec1221405aa6f7a0b6cf29a485358418e', 'Mathematics dep', '', '', 'photos/login.png'),
+(29, 'Physics dep', 'Physics dep', '01146150202aa49130b9a4d5728687bdf38e9f7b', 'Physics dep', '', '', 'photos/login.png'),
+(30, 'Biology dep', 'Biology dep', '623c5970c55f473c8075f39d3eeb0890b35cb514', 'Biology dep', '', '', 'photos/login.png');
 
 --
 -- Indexes for dumped tables
@@ -618,6 +685,12 @@ ALTER TABLE `pst-graduate-std`
   ADD PRIMARY KEY (`Id`);
 
 --
+-- Indexes for table `pstgraduatestd`
+--
+ALTER TABLE `pstgraduatestd`
+  ADD PRIMARY KEY (`Id`);
+
+--
 -- Indexes for table `students`
 --
 ALTER TABLE `students`
@@ -628,18 +701,6 @@ ALTER TABLE `students`
 --
 ALTER TABLE `tblannouncement`
   ADD PRIMARY KEY (`ANNOUNCEMENTID`);
-
---
--- Indexes for table `tblexpenses`
---
-ALTER TABLE `tblexpenses`
-  ADD PRIMARY KEY (`EXPENSEID`);
-
---
--- Indexes for table `tblfees`
---
-ALTER TABLE `tblfees`
-  ADD PRIMARY KEY (`FEEID`);
 
 --
 -- Indexes for table `tbllevel`
@@ -690,6 +751,12 @@ ALTER TABLE `pst-graduate-std`
   MODIFY `Id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `pstgraduatestd`
+--
+ALTER TABLE `pstgraduatestd`
+  MODIFY `Id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
@@ -702,18 +769,6 @@ ALTER TABLE `tblannouncement`
   MODIFY `ANNOUNCEMENTID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20220015;
 
 --
--- AUTO_INCREMENT for table `tblexpenses`
---
-ALTER TABLE `tblexpenses`
-  MODIFY `EXPENSEID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `tblfees`
---
-ALTER TABLE `tblfees`
-  MODIFY `FEEID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
 -- AUTO_INCREMENT for table `tbllevel`
 --
 ALTER TABLE `tbllevel`
@@ -723,7 +778,7 @@ ALTER TABLE `tbllevel`
 -- AUTO_INCREMENT for table `tbllogs`
 --
 ALTER TABLE `tbllogs`
-  MODIFY `LOGID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=295;
+  MODIFY `LOGID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=367;
 
 --
 -- AUTO_INCREMENT for table `tblstudent`
