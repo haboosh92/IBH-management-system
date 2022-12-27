@@ -21,22 +21,18 @@
   
                   <div class="row">
                     <div class="col-md-11">
-                       <label class="col-md-2 control-label" for=
-                      "ANNOUNCEMENT_TEXT">Title:</label>
+                       <label class="col-md-2 control-label" for="ANNOUNCEMENT_TEXT">Title:</label>
                         <div class="col-md-10">
-                           <input class="form-control input-sm" id="ANNOUNCEMENT_TEXT" name="ANNOUNCEMENT_TEXT" placeholder=
-                            "Title" type="text" value="">
+                           <input class="form-control input-sm" id="ANNOUNCEMENT_TEXT" name="ANNOUNCEMENT_TEXT" placeholder="Title" type="text" value="">
                         </div>
                     </div>
                   </div> 
 
                   <div class="row">
                     <div class="col-md-11">
-                       <label class="col-md-2 control-label" for=
-                      "ANNOUNCEMENT_WHAT">Body:</label>
+                       <label class="col-md-2 control-label" for="ANNOUNCEMENT_WHAT">Body:</label>
                         <div class="col-md-10">
-                          <textarea  class="form-control input-sm" id="ANNOUNCEMENT_WHAT" name="ANNOUNCEMENT_WHAT" placeholder=
-                            "Body" rows="12" cols="60"></textarea>
+                          <textarea  class="form-control input-sm" id="ANNOUNCEMENT_WHAT" name="ANNOUNCEMENT_WHAT" placeholder="Body" rows="12" cols="60"></textarea>
                         </div>
                     </div>
                   </div>       
