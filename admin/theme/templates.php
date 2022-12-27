@@ -131,7 +131,7 @@ admin_confirm_logged_in();
                         <?php } ?>
                         <?php if ($_SESSION['ACCOUNT_TYPE']=='Administrator' || $_SESSION['ACCOUNT_TYPE']=='HR'  ) {  ?>
                         <li>
-                             <a href="#" ><i class="fa fa-user fa-fw"></i>  HR  <span class="fa arrow"></span> </a>
+                             <a href="#" ><i class="fa fa-user fa-fw"></i>  Documents workflow  <span class="fa arrow"></span> </a>
                              <ul class="nav nav-second-level">
                                 <li>  <a href="<?php echo web_root; ?>admin/HRinstructors/index.php" ><i class="fa fa-circle-o fa-fw"></i>  Inbox </a></li> 
                                 <li>
@@ -150,16 +150,18 @@ admin_confirm_logged_in();
                     
                         </li> 
                         <?php }  ?>
-                        <?php if ($_SESSION['ACCOUNT_TYPE']=='Administrator' || $_SESSION['ACCOUNT_TYPE']=='Scientific affairs') {  ?>
+                        <?php if ($_SESSION['ACCOUNT_TYPE']=='Administrator' || $_SESSION['ACCOUNT_TYPE']=='Scientific affairs' || $_SESSION['ACCOUNT_TYPE']=='Mathematics dep' || $_SESSION['ACCOUNT_TYPE']=='Biology dep' || $_SESSION['ACCOUNT_TYPE']=='Chemistry dep' || $_SESSION['ACCOUNT_TYPE']=='Physics dep') {  ?>
                         <li>
                             <a href="<?php echo web_root; ?>admin/postGraduate/index.php" ><i class="fa fa-graduation-cap fa-fw"></i> Post Graduate <span class="fa arrow"></span></a>
-                             <ul class="nav nav-second-level">
-                                <li><a href="<?php echo web_root; ?>admin/postGraduate/index.php"><i class="fa fa-circle-o fa-fw"></i> Math </a></li> 
-                                <li><a href="<?php echo web_root; ?>admin/postGraduate/index.php" ><i class="fa fa-circle-o fa-fw"></i>  Chemistry </a></li> 
-                                <li><a href="<?php echo web_root; ?>admin/postGraduate/index.php"><i class="fa fa-circle-o fa-fw"></i> Biology </a></li> 
-                                <li><a href="<?php echo web_root; ?>admin/postGraduate/index.php" ><i class="fa fa-circle-o fa-fw"></i>  Physics </a></li>
+                            <ul class="nav nav-second-level">
+
+                                <li><a href="<?php echo web_root; ?>admin/postGraduate/index.php" ><i class="fa fa-circle-o fa-fw"></i> Math </a></li> 
+                                <li><a href="<?php echo web_root; ?>admin/postGraduate/index.php" ><i class="fa fa-circle-o fa-fw"></i> Chemistry </a></li> 
+                                <li><a href="<?php echo web_root; ?>admin/postGraduate/index.php" ><i class="fa fa-circle-o fa-fw"></i> Biology </a></li> 
+                                <li><a href="<?php echo web_root; ?>admin/postGraduate/index.php" ><i class="fa fa-circle-o fa-fw"></i> Physics </a></li>
                              </ul>
-                        </li>  
+                        </li>
+
                         <li>
                             <a href="<?php echo web_root; ?>admin/user/index.php" ><i class="fa fa-user fa-fw"></i> Users </a> 
                         </li> 
@@ -205,54 +207,42 @@ admin_confirm_logged_in();
  
 
     <!-- Modal -->
-                    <div class="modal fade" id="usermodal" tabindex="-1">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button class="close" data-dismiss="modal" type=
-                                    "button">×</button>
+        <div class="modal fade" id="usermodal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal" type="button">×</button>
+                        <h4 class="modal-title" id="myModalLabel">Profile Image.</h4>
+                    </div>
 
-                                    <h4 class="modal-title" id="myModalLabel">Profile Image.</h4>
-                                </div>
-
-                                <form action="<?php echo web_root; ?>admin/user/controller.php?action=photos" enctype="multipart/form-data" method=
-                                "post">
-                                    <div class="modal-body">
-                                        <div class="form-group">
-                                            <div class="rows">
-                                            <div class="col-md-12">
+                    <form action="<?php echo web_root; ?>admin/user/controller.php?action=photos" enctype="multipart/form-data" method="post">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <div class="rows">
+                                    <div class="col-md-12">
                                                 <div class="rows">
                                                     <img title="profile image" width="500" height="360" src="<?php echo web_root.'admin/user/'.$singleuser ->USERIMAGE ?>">  
-                          
                                                 </div>
                                             </div><br/>
-                                                <div class="col-md-12">
-                                                    <div class="rows">
-                                                        <div class="col-md-8">
-
-                                                            <input type="hidden" name="MIDNO" id="MIDNO" value="<?php echo $_SESSION['ACCOUNT_ID']; ?>">
-                                                              <input name="MAX_FILE_SIZE" type=
-                                                            "hidden" value="1000000"> <input id=
-                                                            "photo" name="photo" type=
-                                                            "file">
-                                                        </div>
-
-                                                        <div class="col-md-4"></div>
+                                            <div class="col-md-12">
+                                                <div class="rows">
+                                                    <div class="col-md-8">
+                                                        <input type="hidden" name="MIDNO" id="MIDNO" value="<?php echo $_SESSION['ACCOUNT_ID']; ?>">
+                                                        <input name="MAX_FILE_SIZE" type="hidden" value="1000000"> <input id="photo" name="photo" type="file">
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
 
                                     <div class="modal-footer">
-                                        <button class="btn btn-default" data-dismiss="modal" type=
-                                        "button">Close</button> <button class="btn btn-primary"
-                                        name="savephoto" type="submit">Upload Photo</button>
+                                        <button class="btn btn-default" data-dismiss="modal" type="button">Close</button> <button class="btn btn-primary" name="savephoto" type="submit">Upload Photo</button>
                                     </div>
-                                </form>
-                            </div><!-- /.modal-content -->
-                        </div><!-- /.modal-dialog -->
-                    </div><!-- /.modal -->
+                    </form>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
   
 <!-- jQuery -->
 <script src="<?php echo web_root; ?>admin/jquery/jquery.min.js"></script>

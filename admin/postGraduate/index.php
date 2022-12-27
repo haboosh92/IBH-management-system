@@ -4,12 +4,32 @@ if(!isset($_SESSION['ACCOUNT_ID'])){
 	redirect(web_root."admin/index.php");
 }
 
-$view = (isset($_GET['view']) && $_GET['view'] != '') ? $_GET['view'] : '';
+ $view = (isset($_GET['view']) && $_GET['view'] != '') ? $_GET['view'] : '';
  $title="Dean & Assistants"; 
  $header=$view; 
 switch ($view) {
 	case 'list' :
-		$content    = 'list.php';		
+		if($_SESSION['ACCOUNT_TYPE']=='Administrator' || $_SESSION['ACCOUNT_TYPE']=='Scientific affairs')
+		{
+			$content    = 'list.php';		
+		}
+		elseif($_SESSION['ACCOUNT_TYPE']=='Biology dep' )
+		{
+			$content    = 'listB.php';		
+		}
+		elseif($_SESSION['ACCOUNT_TYPE']=='Chemistry dep' )
+		{
+			$content    = 'listCh.php';		
+		}
+		elseif($_SESSION['ACCOUNT_TYPE']=='Mathematics dep' )
+		{
+			$content    = 'listM.php';		
+			
+		}
+		else
+		{
+			$content    = 'listP.php';		
+		};
 		break;
 
 	case 'add' :
@@ -29,4 +49,3 @@ switch ($view) {
 }
 require_once ("../theme/templates.php");
 ?>
-  
