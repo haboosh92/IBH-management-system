@@ -19,7 +19,7 @@ if(!isset($_SESSION['ACCOUNT_ID'])){
             </tr>
             <tr>
                 <td><label>Contact No. </label></td>
-                <td colspan="3"><input class="form-control input-md" id="ContactNo" name="ContactNo" placeholder="Contact Number " type="number" maxlength="11" ></td>
+                <td colspan="3"><input class="form-control input-md" id="ContactNo" name="ContactNo" placeholder="Contact Number " type="number" maxlength="18" ></td>
             </tr>
             <tr>
                 <td><label>Email </label></td>
