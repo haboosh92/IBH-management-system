@@ -26,10 +26,23 @@
 		<div class="panel-heading">
 			Postgraduate Students
 		</div>
-		<div class="panel-body" style="color:red">
+		<div class="panel-body" style="color:red ; font-size:18px ">
 		   <?php 
                 # code...
-				echo " " ."<br>";	
+				$sql1 = "SELECT * FROM `pstgraduatestd` WHERE `Course`='Physics' ";
+				$cur1 = $mydb->setQuery($sql1); 
+				$Mpstgrdstd = $mydb->num_rows($cur1);
+				echo "All students = ".$Mpstgrdstd.'<br>';
+				
+				$sql2 = "SELECT * FROM `pstgraduatestd` WHERE `Course`='Physics' && `ProgramType`='MSC'";
+				$cur2 = $mydb->setQuery($sql2); 
+				$MMsc = $mydb->num_rows($cur2);
+				echo "MSC students = ".$MMsc.'<br>';
+
+				$sql3 = "SELECT * FROM `pstgraduatestd` WHERE `Course`='Physics' && `ProgramType`='PHD'";
+				$cur3 = $mydb->setQuery($sql3); 
+				$MPHD = $mydb->num_rows($cur3);
+				echo "PHD students = ".$MPHD.'<br>';
 			?>
 		</div>
 	</div>
