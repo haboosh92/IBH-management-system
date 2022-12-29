@@ -20,11 +20,11 @@
 
 	.panel-danger > .panel-heading {
   color: #fff;
-  background-color: #66CDAA;
-  border-color: #66CDAA;
+  background-color: #39ae86;
+  border-color: #39ae86;
 	}
 	.panel-danger {
-	border-color:  #66CDAA;
+	border-color:  #39ae86;
   }
 </style> 
 
@@ -53,10 +53,7 @@
 		</div>
 		<div class="panel-body" style="color:red">
 		   <?php 
-				// $sql ="SELECT * FROM `tblstudent` WHERE ACCOUNTTYPE='Officer'";
-				// $cur = $mydb->setQuery($sql); 
-				// $allofficer = $mydb->num_rows($cur);
-				// echo $allofficer;
+				
 			?>
 		</div>
 	</div>
@@ -69,10 +66,7 @@
 		</div>
 		<div class="panel-body" style="color:#663399">
 		   <?php 
-				// $sql ="SELECT * FROM `tblstudent` WHERE ACCOUNTTYPE=''";
-				// 	$cur = $mydb->setQuery($sql); 
-				// $allofficer = $mydb->num_rows($cur);
-				// echo $allofficer;
+				
 			?>
 		</div>
 	</div>
@@ -85,9 +79,7 @@
 		</div>
 		<div class="panel-body" style="color:#007bff">
 		   <?php 
-			/*	$sql ="SELECT * FROM `tblstudent`";
-					$cur = $mydb->setQuery($sql); 
-				$allofficer = $mydb->num_rows($cur);	*/
+			
 				echo "Upcoming events";
 			?>
 		</div>
@@ -98,33 +90,32 @@
 		<div class="panel-heading">
 			 Post Graduate students
 		</div>
-		<div class="panel-body"  style="color:#66CDAA ; font-size:18px">
+		<div class="panel-body"  style="color:#39ae86 ; font-size:17px">
 			<?php 
+				$sql = "SELECT * FROM `pstgraduatestd`";
+				$cur = $mydb->setQuery($sql); 
+				$allpstgrdstd = $mydb->num_rows($cur);
+				echo "All students = ".$allpstgrdstd.'<br>';
 
-$sql = "SELECT * FROM `pstgraduatestd`";
-$cur = $mydb->setQuery($sql); 
-$allpstgrdstd = $mydb->num_rows($cur);
-echo "All students ".$allpstgrdstd.'<br>';
+				$sql1 = "SELECT * FROM `pstgraduatestd` WHERE `Course`='Biology'";
+				$cur1 = $mydb->setQuery($sql1); 
+				$Biopstgrdstd = $mydb->num_rows($cur1);
+				echo "Biology dep = ".$Biopstgrdstd.'<br>';
 
-$sql1 = "SELECT * FROM `pstgraduatestd` WHERE `Course`='Biology'";
-$cur1 = $mydb->setQuery($sql1); 
-$Biopstgrdstd = $mydb->num_rows($cur1);
-echo "Biology dep ".$Biopstgrdstd.'<br>';
+				$sql2 = "SELECT * FROM `pstgraduatestd` WHERE `Course`='Math'";
+				$cur2 = $mydb->setQuery($sql2); 
+				$Mpstgrdstd = $mydb->num_rows($cur2);
+				echo "Mathematics dep = ".$Mpstgrdstd.'<br>';
 
-$sql2 = "SELECT * FROM `pstgraduatestd` WHERE `Course`='Math'";
-$cur2 = $mydb->setQuery($sql2); 
-$Mpstgrdstd = $mydb->num_rows($cur2);
-echo "Mathematics dep ".$Mpstgrdstd.'<br>';
+				$sql3 = "SELECT * FROM `pstgraduatestd` WHERE `Course`='Physics'";
+				$cur3 = $mydb->setQuery($sql3); 
+				$Phpstgrdstd = $mydb->num_rows($cur3);
+				echo "Physics dep = ".$Phpstgrdstd.'<br>';
 
-$sql3 = "SELECT * FROM `pstgraduatestd` WHERE `Course`='Physics'";
-$cur3 = $mydb->setQuery($sql3); 
-$Phpstgrdstd = $mydb->num_rows($cur3);
-echo "Physics dep ".$Phpstgrdstd.'<br>';
-
-$sql4 = "SELECT * FROM `pstgraduatestd` WHERE `Course`='Chemistry'";
-$cur4 = $mydb->setQuery($sql4); 
-$Chpstgrdstd = $mydb->num_rows($cur4);
-echo "Chemistry dep ".$Chpstgrdstd.'<br>';
+				$sql4 = "SELECT * FROM `pstgraduatestd` WHERE `Course`='Chemistry'";
+				$cur4 = $mydb->setQuery($sql4); 
+				$Chpstgrdstd = $mydb->num_rows($cur4);
+				echo "Chemistry dep = ".$Chpstgrdstd.'<br>';
 
 			?>
 		</div>
