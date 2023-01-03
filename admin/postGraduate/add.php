@@ -65,6 +65,44 @@ if(!isset($_SESSION['ACCOUNT_ID'])){
                 </td>
             </tr>
             <tr>
+                <td><label>Level </label></td>
+                <td colspan="3">
+                    <select class="form-control input-sm" name="level">
+                        <option value = "<?php echo isset($_POST['level']) ? $_POST['level'] : 'Select'?>">Select</option>
+                        <option value = "First level" >First level</option>
+                        <option value = "research level ">research level</option>
+                    </select> 
+                </td>
+            </tr>
+            <!-- <tr>
+                <td><label>First extend</label></td>
+                <td colspan="2">
+                <select class="form-control input-sm" name="extend1">
+                    <option value="<?php ?>">Select (* Optional)</option>
+                    <option value="Yes">Single</option>
+                    <option value="No">Married</option> 
+                </select>
+                </td>
+            </tr> -->
+            <tr>
+                <td><label> Extend 1 deadline </label></td>
+                <td colspan="3">
+                    <div class="input-group" >
+                        <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                        <input class="form-control input-md" name="extend1"  id="extend1"  type="date"  placeholder="mm/dd/yyyy"  data-inputmask="'alias': 'mm/dd/yyyy'" data-mask value="<?php echo isset($_POST['extend1']) ? $_POST['extend1'] : ''; ?>">
+                    </div>  
+                </td>
+            </tr>
+            <tr>
+                <td><label> Extend 2 deadline </label></td>
+                <td colspan="3">
+                    <div class="input-group" >
+                        <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                        <input class="form-control input-md" name="extend2"  id="extend2"  type="date"  placeholder="mm/dd/yyyy"  data-inputmask="'alias': 'mm/dd/yyyy'" data-mask value="<?php echo isset($_POST['extend2']) ? $_POST['extend2'] : ''; ?>">
+                    </div>  
+                </td>
+            </tr>
+            <tr>
                 <td><label>Notes</label></td>
                 <td colspan="3"><input class="form-control input-md" id="Note" name="Note" placeholder="Any further important information" type="text"></td>
             </tr>

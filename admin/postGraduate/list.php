@@ -21,6 +21,7 @@
                                         <th> Email </th>
                                         <th> Program Type</th>
                                         <th> Department </th>
+                                        
                                         <th> Accademic Year </th>
                                         <th> Final Deadline</th>
                                         <th> Notes</th>
@@ -39,7 +40,7 @@
                                              # code...
                                              echo '<tr>
                                                        <td>' .$result->Id.'</td>
-                                                       <td>' .$result->FName.'</td>
+                                                       <td>' .$result->FName." ".$result->MName." ".$result->LName.'</td>
                                                        <td>' .$result->Surname.'</td>
                                                        <td>' .$result->ContactNo.'</td>
                                                        <td>' .$result->Email.'</td>
@@ -63,7 +64,7 @@
                                              # code...
                                              echo '<tr>
                                                        <td>' .$result->Id.'</td>
-                                                       <td>' .$result->FName.'</td>
+                                                       <td>' .$result->FName." ".$result->MName." ".$result->LName.'</td>
                                                        <td>' .$result->Surname.'</td>
                                                        <td>' .$result->ContactNo.'</td>
                                                        <td>' .$result->Email.'</td>
@@ -87,7 +88,7 @@
                                              # code...
                                              echo '<tr>
                                                        <td>' .$result->Id.'</td>
-                                                       <td>' .$result->FName.'</td>
+                                                       <td>' .$result->FName." ".$result->MName." ".$result->LName.'</td>
                                                        <td>' .$result->Surname.'</td>
                                                        <td>' .$result->ContactNo.'</td>
                                                        <td>' .$result->Email.'</td>
@@ -111,12 +112,13 @@
                                              # code...
                                              echo '<tr>
                                                        <td>' .$result->Id.'</td>
-                                                       <td>' .$result->FName.'</td>
+                                                       <td>' .$result->FName." ".$result->MName." ".$result->LName.'</td>
                                                        <td>' .$result->Surname.'</td>
                                                        <td>' .$result->ContactNo.'</td>
                                                        <td>' .$result->Email.'</td>
                                                        <td>' .$result->ProgramType.'</td>
                                                        <td>' .$result->Course.'</td>
+                                                       
                                                        <td>' .$result->Date_Start.'</td>
                                                        <td>' .$result->Final_Deadline.'</td>
                                                        <td>' .$result->Note.'</td>
@@ -135,7 +137,7 @@
                                              # code...
                                              echo '<tr>
                                                        <td>' .$result->Id.'</td>
-                                                       <td>' .$result->FName.'</td>
+                                                       <td>' .$result->FName." ".$result->MName." ".$result->LName.'</td>
                                                        <td>' .$result->Surname.'</td>
                                                        <td>' .$result->ContactNo.'</td>
                                                        <td>' .$result->Email.'</td>

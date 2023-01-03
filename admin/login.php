@@ -15,7 +15,7 @@ require_once("../include/initialize.php");
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>Online Student Management System</title>
+<title> Student Management System</title>
 
 <!-- Bootstrap core CSS -->
 <link href="<?php echo web_root; ?>css/bootstrap.min.css" rel="stylesheet"> 
@@ -51,11 +51,7 @@ http://www.bootstrapzen.com/item/135/simple-login-form-logo/
     font-size: 16px;
     height: auto;
     padding: 10px;
-    @include box-sizing(border-box);
 
-    &:focus {
-      z-index: 2;
-    }
   }
 
 body {
@@ -128,7 +124,7 @@ form[role=login] {
       <section class="login-form"> <?php echo check_message(); ?>
         <form  method="post" action="" role="login">
           <!-- <img src="http://i.imgur.com/RcmcLv4.png" class="img-responsive" alt="" /> -->
-           <img src="img/login.png" class="img-responsive" alt="" /> 
+          <img src="img/login.png" class="img-responsive" alt="" /> 
           <input type="input" name="user_email" placeholder="Username" required class="form-control input-lg" value="" /> 
           <input type="password" name="user_pass" class="form-control input-lg" id="password" placeholder="Password" required  /> 
           <div class="pwstrength_viewport_progress"></div>
