@@ -158,7 +158,7 @@ if(isset($_POST['btnLogin'])){
    if ($email == '' OR $upass == '') {
 
       message("Invalid Username and Password!", "error");
-      redirect("login.php");
+      redirect("index.php");
          
     } else {  
   //it creates a new objects of member
@@ -174,15 +174,18 @@ if(isset($_POST['btnLogin'])){
 
       if ($_SESSION['ACCOUNT_TYPE']=='Administrator'){ 
          redirect(web_root."index.php");
-      }elseif($_SESSION['ACCOUNT_TYPE']=='Registrar'){
-          redirect(web_root."index.php");
-
-      }else{
-           redirect(web_root."login.php");
       }
-    }else{
+      // elseif($_SESSION['ACCOUNT_TYPE']=='Registrar'){
+      //     redirect(web_root."index.php");
+
+      // }
+      // else{
+      //      redirect(web_root."login.php");
+      // }
+    }
+    else{
       message("Account does not exist! Please contact Administrator.", "error");
-       redirect(web_root."login.php"); 
+       redirect(web_root."index.php"); 
     }
  }
  } 

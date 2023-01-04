@@ -76,16 +76,10 @@ admin_confirm_logged_in();
                     </a>
                     <ul class="dropdown-menu dropdown-acnt">
                     
-                      <?php if ($_SESSION['ACCOUNT_TYPE']=='Student affairs') { ?>
-                        <div class="divtxt">
-                          <li><a href="<?php echo web_root; ?>index.php?q=profile"> <?php echo $singleuser->ACCOUNT_NAME; ?> </a> 
-                          <li><a href="<?php echo web_root; ?>admin/logout.php"><i class="fa fa-sign-out fa-fw"></i> Log Out</a></li> 
-                        </div>
-                     <?php }else{  ?>
+                      <?php { ?>
                          <div class="divtxt">
                           <li><a href="<?php echo web_root; ?>admin/user/index.php?view=edit&id=<?php echo $_SESSION['ACCOUNT_ID']; ?>"> <?php echo $singleuser->ACCOUNT_NAME; ?> </a>
-                          <li><a title="Edit" href="<?php echo web_root; ?>admin/user/index.php?view=edit&id=<?php echo $_SESSION['ACCOUNT_ID']; ?>"  >Edit My Profile</a></li> 
-                          <li><a href="<?php echo web_root; ?>admin/logout.php"><i class="fa fa-sign-out fa-fw"></i> Log Out</a></li> 
+                          <li><a href="<?php echo web_root; ?>logout.php"><i class="fa fa-sign-out fa-fw"></i> Log Out</a></li> 
                         </div>
                        <?php   } ?>  
                     </ul>
