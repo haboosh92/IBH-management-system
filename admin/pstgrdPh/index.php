@@ -9,7 +9,7 @@ if(!isset($_SESSION['ACCOUNT_ID'])){
  $header=$view; 
 switch ($view) {
 	case 'list' :
-			$content    = 'list.php';		
+		$content    = 'listP.php';		
 		break;
 
 	case 'add' :
@@ -25,7 +25,7 @@ switch ($view) {
 		break;
 
 	default :
-		$content    = 'list.php';		
+		$content    = 'listP.php';		
 }
 require_once ("../theme/templates.php");
 ?>
