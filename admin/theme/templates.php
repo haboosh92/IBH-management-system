@@ -133,9 +133,9 @@ admin_confirm_logged_in();
                         <li>
                              <a href="#" ><i class="fa fa-user fa-fw"></i>  Documents workflow  <span class="fa arrow"></span> </a>
                              <ul class="nav nav-second-level">
-                                <li>  <a href="<?php echo web_root; ?>admin/HRinstructors/index.php" ><i class="fa fa-circle-o fa-fw"></i>  Inbox </a></li> 
+                                <li>  <a href="<?php echo web_root; ?>admin/HRInbox/index.php" ><i class="fa fa-circle-o fa-fw"></i>  Inbox </a></li> 
                                 <li>
-                                     <a href="<?php echo web_root; ?>admin/HRofficers/index.php"><i class="fa fa-circle-o fa-fw"></i> Outbox </a>
+                                     <a href="<?php echo web_root; ?>admin/HROutbox/index.php"><i class="fa fa-circle-o fa-fw"></i> Outbox </a>
                                 </li> 
                              </ul>
                         </li> 

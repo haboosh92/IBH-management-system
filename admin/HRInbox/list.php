@@ -6,10 +6,12 @@
 ?>
 
 <div class="row">
-     <div class="col-lg-12">
-       	<div class="col-lg-8">
-        	<h2 class="page-header">List of Inbox </h2>
+    <div class="col-lg-12">
+       	 <div class="col-lg-6">
+            <h1 class="page-header"> List of Inbox </h1>
        	</div>
+    </div>
+
 </div>
         
 	 		    
