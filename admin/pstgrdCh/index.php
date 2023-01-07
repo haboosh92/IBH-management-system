@@ -9,27 +9,7 @@ if(!isset($_SESSION['ACCOUNT_ID'])){
  $header=$view; 
 switch ($view) {
 	case 'list' :
-		if($_SESSION['ACCOUNT_TYPE']=='Administrator' || $_SESSION['ACCOUNT_TYPE']=='Scientific affairs')
-		{
-			$content    = 'list.php';		
-		}
-		elseif($_SESSION['ACCOUNT_TYPE']=='Biology dep' )
-		{
-			$content    = 'listB.php';		
-		}
-		elseif($_SESSION['ACCOUNT_TYPE']=='Chemistry dep' )
-		{
-			$content    = 'listCh.php';		
-		}
-		elseif($_SESSION['ACCOUNT_TYPE']=='Mathematics dep' )
-		{
-			$content    = 'listM.php';		
-			
-		}
-		else
-		{
-			$content    = 'listP.php';		
-		};
+		$content    = 'listCh.php';		
 		break;
 
 	case 'add' :
@@ -41,11 +21,11 @@ switch ($view) {
 		break;
 
     case 'view' :
-		$content    = 'view.php';		
+		$content    = 'view.php';		// not created yet 
 		break;
 
 	default :
-		$content    = 'list.php';		
+		$content    = 'listCh.php';		
 }
 require_once ("../theme/templates.php");
 ?>

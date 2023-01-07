@@ -29,7 +29,7 @@
                               </thead>
                               <tbody>
                                    <?php 
-                                    if($_SESSION['ACCOUNT_TYPE']=='Administrator' || $_SESSION['ACCOUNT_TYPE']=='Scientific affairs') // I'm not sure currently if the post graduate students is the same for both Dean and his assistances we might remove this condition later 
+                                    if($_SESSION['ACCOUNT_TYPE']=='Administrator' || $_SESSION['ACCOUNT_TYPE']=='Scientific affairs' || $_SESSION['ACCOUNT_TYPE']=='Physics dep') // I'm not sure currently if the post graduate students is the same for both Dean and his assistances we might remove this condition later 
                                     {
                                         // $postSql = "SELECT * FROM pst-graduate-std";
                                          $postSql = "SELECT `Id`, `FName`, `MName`, `LName`, `Surname`, `ContactNo`, `Email`, `ProgramType`, `Course`, `Date_Start`, `Final_Deadline`, `Note` FROM `pstgraduatestd` WHERE Course ='Physics' " ;

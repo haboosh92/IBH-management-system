@@ -21,7 +21,7 @@ switch ($view) {
 		break;
 
     case 'view' :
-		$content    = 'view.php';		
+		$content    = 'view.php';		// not created yet 
 		break;
 
 	default :
