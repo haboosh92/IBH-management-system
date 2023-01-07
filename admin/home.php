@@ -120,7 +120,7 @@
 
 
 			?>
-			<a href="detRepPst.php" class="btn btn-link" style = "color:#39ae86 ; margin:10px" > View details</a>
+			<a href="reports/index.php" class="btn btn-link" style = "color:#39ae86 ; margin:10px" > View details</a>
 		</div>
 	</div>
 </div>
