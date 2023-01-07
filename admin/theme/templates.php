@@ -149,7 +149,7 @@ admin_confirm_logged_in();
                             <a href="<?php echo web_root; ?>admin/postGraduate/index.php" ><i class="fa fa-graduation-cap fa-fw"></i> Post Graduate <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
 
-                                <li><a href="<?php echo web_root; ?>admin/pstgrdBio/index.php" ><i class="fa fa-circle-o fa-fw"></i> Math </a></li> 
+                                <li><a href="<?php echo web_root; ?>admin/pstgrdMa/index.php" ><i class="fa fa-circle-o fa-fw"></i> Math </a></li> 
                                 <li><a href="<?php echo web_root; ?>admin/pstgrdCh/index.php" ><i class="fa fa-circle-o fa-fw"></i> Chemistry </a></li> 
                                 <li><a href="<?php echo web_root; ?>admin/pstgrdBio/index.php" ><i class="fa fa-circle-o fa-fw"></i> Biology </a></li> 
                                 <li><a href="<?php echo web_root; ?>admin/pstgrdPh/index.php" ><i class="fa fa-circle-o fa-fw"></i> Physics </a></li>

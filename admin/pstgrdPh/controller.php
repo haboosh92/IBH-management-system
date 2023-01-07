@@ -13,6 +13,8 @@ switch($action) {
     doEdit();
     break;
     
+        // remember to add the case view
+
     case 'delete' :
     doDelete();
     break;
