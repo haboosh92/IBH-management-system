@@ -12,11 +12,12 @@
 		<div class="panel-heading" >
 			Undergraduate Students
 		</div>
-		<div class="panel-body" style="color:green">
+		<div class="panel-body" style="color:green ; font-size : 18px">
 			<?php 
 				# code...
-				echo " " ."<br>";	
+				
 			?>
+			<a href="reports/index.php" class="btn btn-link" style = "margin:10px" > View details</a>
 		</div>
 	</div>
 </div>
@@ -34,16 +35,17 @@
 				$Biopstgrdstd = $mydb->num_rows($cur1);
 				echo "All students = ".$Biopstgrdstd.'<br>';
 				
-				$sql2 = "SELECT * FROM `pstgraduatestd` WHERE `Course`='Biology' && `ProgramType`='MSC'";
-				$cur2 = $mydb->setQuery($sql2); 
-				$BioMsc = $mydb->num_rows($cur2);
-				echo "MSC students = ".$BioMsc.'<br>';
+				// $sql2 = "SELECT * FROM `pstgraduatestd` WHERE `Course`='Biology' && `ProgramType`='MSC'";
+				// $cur2 = $mydb->setQuery($sql2); 
+				// $BioMsc = $mydb->num_rows($cur2);
+				// echo "MSC students = ".$BioMsc.'<br>';
 
-				$sql3 = "SELECT * FROM `pstgraduatestd` WHERE `Course`='Biology' && `ProgramType`='PHD'";
-				$cur3 = $mydb->setQuery($sql3); 
-				$BioPHD = $mydb->num_rows($cur3);
-				echo "PHD students = ".$BioPHD.'<br>';
+				// $sql3 = "SELECT * FROM `pstgraduatestd` WHERE `Course`='Biology' && `ProgramType`='PHD'";
+				// $cur3 = $mydb->setQuery($sql3); 
+				// $BioPHD = $mydb->num_rows($cur3);
+				// echo "PHD students = ".$BioPHD.'<br>';
 			?>
+			<a href="reports/index.php" class="btn btn-link" style = "margin:10px" > View details</a>
 		</div>
 	</div>
 </div>
